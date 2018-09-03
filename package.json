@@ -1,0 +1,66 @@
+{
+  "name": "pk10",
+  "version": "1.0.0",
+  "description": "PK10",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rytass/PK10.git"
+  },
+  "keywords": [
+    "PK10",
+    "rytass"
+  ],
+  "author": "Chia Yu Pai (Rytass)",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/Rytass/PK10/issues"
+  },
+  "homepage": "https://github.com/Rytass/PK10#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "debug": "^3.1.0",
+    "history": "^4.7.2",
+    "lodash": "^4.17.10",
+    "radium": "^0.24.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "react-virtual-list": "^2.3.0",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-3": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.2",
+    "electron": "^2.0.8",
+    "electron-builder": "^20.28.3",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "express": "^4.16.3",
+    "file-loader": "^2.0.0",
+    "react-hot-loader": "^4.3.5",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-middleware": "^3.2.0",
+    "webpack-hot-middleware": "^2.23.0"
+  }
+}
