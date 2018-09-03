@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { hot } from 'react-hot-loader';
 import { MemoryRouter } from 'react-router';
 import {
@@ -8,6 +8,7 @@ import {
   Route,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import Header from './containers/Header';
 import MainBoard from './containers/MainBoard';
 
 function App({
@@ -16,9 +17,12 @@ function App({
   return (
     <Provider store={store}>
       <MemoryRouter>
-        <Switch>
-          <Route path="/" component={MainBoard} />
-        </Switch>
+        <Fragment>
+          <Header />
+          <Switch>
+            <Route path="/" component={MainBoard} />
+          </Switch>
+        </Fragment>
       </MemoryRouter>
     </Provider>
   );
