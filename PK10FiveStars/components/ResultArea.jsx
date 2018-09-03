@@ -11,19 +11,26 @@ const styles = {
   textAreaWrapper: {
     display: 'block',
     width: '100%',
-    height: 540,
+    height: 450,
     overflow: 'auto',
     backgroundColor: '#fff',
     border: '1px solid #d2d2d2',
     padding: '8px 0',
   },
-  resultWrapper: {
+  resultAreaWrapper: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignSelf: 'stretch',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start',
     padding: '12px 4px',
+  },
+  resultWrapper: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   label: {
     fontSize: 16,
@@ -36,15 +43,17 @@ const styles = {
     letterSpacing: 1,
     color: '#110670',
     fontWeight: 600,
-    margin: '0 0 0 8px',
+    margin: '0 8px',
   },
   statusText: {
     fontSize: 16,
     letterSpacing: 1,
     color: '#110670',
     fontWeight: 600,
-    flexGrow: 1,
-    textAlign: 'right',
+    margin: '2px 0 0 0',
+  },
+  space: {
+    height: 24,
   },
 };
 
@@ -66,7 +75,7 @@ class ResultArea extends PureComponent<Props> {
     };
 
     this.onContextMenu = () => {
-      ipcRenderer.send('CLIPBOARD_CACHE', this.props.resultNumber.map(num => num.num).join(' '));
+      ipcRenderer.send('CLIPBOARD_CACHE', props.resultNumber.map(num => num.num).join(' '));
     };
   }
 
@@ -93,7 +102,7 @@ class ResultArea extends PureComponent<Props> {
     return (
       <List
         itemHeight={18}
-        items={chunk(resultNumber, 5)} />
+        items={chunk(resultNumber, 1)} />
     );
   }
 
@@ -112,7 +121,9 @@ class ResultArea extends PureComponent<Props> {
       );
     }
 
-    return null;
+    return (
+      <div style={styles.space} />
+    );
   }
 
   render() {
@@ -126,11 +137,13 @@ class ResultArea extends PureComponent<Props> {
             this.getScrollableList()
           ) : null}
         </div>
-        <div style={styles.resultWrapper}>
-          <span style={styles.label}>结果注数</span>
-          {resultNumber.length && resultNumber[0] !== NO_RESULT ? (
-            <span style={styles.resultNumber}>{resultNumber.length}</span>
-          ) : null}
+        <div style={styles.resultAreaWrapper}>
+          <div style={styles.resultWrapper}>
+            <span style={styles.label}>结果注数</span>
+            {resultNumber.length && resultNumber[0] !== NO_RESULT ? (
+              <span style={styles.resultNumber}>{resultNumber.length}</span>
+            ) : null}
+          </div>
           {this.getStatusText()}
         </div>
       </Fragment>

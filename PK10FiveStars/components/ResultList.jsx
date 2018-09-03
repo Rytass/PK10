@@ -16,7 +16,7 @@ const styles = {
     padding: '0 12px',
   },
   value: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#4a4a4a',
   },
 };
@@ -39,8 +39,16 @@ function ResultList({
               );
             }
 
+            const number = value.num;
+            const splitNum = number.split('').map((num) => {
+              if (num === '0') return '10';
+
+              return `0${num}`;
+            });
+            const resultNum = splitNum.join('\xa0\xa0');
+
             return (
-              <span key={value.num} style={styles.value}>{value.num}</span>
+              <span key={value.num} style={styles.value}>{resultNum}</span>
             );
           })}
         </p>
