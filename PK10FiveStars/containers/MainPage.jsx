@@ -1,24 +1,53 @@
 // @flow
 
-import React from 'react';
+import React, { PureComponent } from 'react';
+import {
+  reduxForm,
+} from 'redux-form';
+import initNumberPool from '../helper/init';
+import { MAIN_FORM } from '../shared/form';
 
 const styles = {
   wrapper: {
-    height: '100%',
+    padding: 8,
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start',
     position: 'relative',
   },
 };
 
-function MainPage() {
-  return (
-    <div style={styles.wrapper}>
-      <h2>YOOOO</h2>
-    </div>
-  );
+type Props = {
+  handleSubmit: Function,
 }
 
-export default MainPage;
+class MainPage extends PureComponent<Props> {
+  static ACTIONS = [
+
+  ];
+
+  submit(options) {
+    console.log(options);
+  }
+
+  render() {
+    const {
+      handleSubmit,
+    } = this.props;
+
+    return (
+      <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
+        <h2>YOOOO</h2>
+      </form>
+    );
+  }
+}
+
+const formHook = reduxForm({
+  form: MAIN_FORM,
+  destroyOnUnmount: false,
+});
+
+export default formHook(MainPage);
