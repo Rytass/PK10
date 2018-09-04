@@ -80,44 +80,44 @@ type Props = {
   changeField: Function,
 }
 
-class BigSmallSection extends PureComponent<Props> {
+class PrimeCompositeSection extends PureComponent<Props> {
   clearValue() {
     const {
       changeField,
     } = this.props;
 
-    changeField('bbbbb', false);
-    changeField('bbbbs', false);
-    changeField('bbbsb', false);
-    changeField('bbbss', false);
-    changeField('bbsbb', false);
-    changeField('bbsbs', false);
-    changeField('bbssb', false);
-    changeField('bbsss', false);
-    changeField('bsbbb', false);
-    changeField('bsbbs', false);
-    changeField('bsbsb', false);
-    changeField('bsbss', false);
-    changeField('bssbb', false);
-    changeField('bssbs', false);
-    changeField('bsssb', false);
-    changeField('bssss', false);
-    changeField('sbbbb', false);
-    changeField('sbbbs', false);
-    changeField('sbbsb', false);
-    changeField('sbbss', false);
-    changeField('sbsbb', false);
-    changeField('sbsbs', false);
-    changeField('sbssb', false);
-    changeField('sbsss', false);
-    changeField('ssbbb', false);
-    changeField('ssbbs', false);
-    changeField('ssbsb', false);
-    changeField('ssbss', false);
-    changeField('sssbb', false);
-    changeField('sssbs', false);
-    changeField('ssssb', false);
-    changeField('sssss', false);
+    changeField('ppppp', false);
+    changeField('ppppc', false);
+    changeField('pppcp', false);
+    changeField('pppcc', false);
+    changeField('ppcpp', false);
+    changeField('ppcpc', false);
+    changeField('ppccp', false);
+    changeField('ppccc', false);
+    changeField('pcppp', false);
+    changeField('pcppc', false);
+    changeField('pcpcp', false);
+    changeField('pcpcc', false);
+    changeField('pccpp', false);
+    changeField('pccpc', false);
+    changeField('pcccp', false);
+    changeField('pcccc', false);
+    changeField('cpppp', false);
+    changeField('cpppc', false);
+    changeField('cppcp', false);
+    changeField('cppcc', false);
+    changeField('cpcpp', false);
+    changeField('cpcpc', false);
+    changeField('cpccp', false);
+    changeField('cpccc', false);
+    changeField('ccppp', false);
+    changeField('ccppc', false);
+    changeField('ccpcp', false);
+    changeField('ccpcc', false);
+    changeField('cccpp', false);
+    changeField('cccpc', false);
+    changeField('ccccp', false);
+    changeField('ccccc', false);
   }
 
   allValue() {
@@ -125,45 +125,45 @@ class BigSmallSection extends PureComponent<Props> {
       changeField,
     } = this.props;
 
-    changeField('bbbbb', true);
-    changeField('bbbbs', true);
-    changeField('bbbsb', true);
-    changeField('bbbss', true);
-    changeField('bbsbb', true);
-    changeField('bbsbs', true);
-    changeField('bbssb', true);
-    changeField('bbsss', true);
-    changeField('bsbbb', true);
-    changeField('bsbbs', true);
-    changeField('bsbsb', true);
-    changeField('bsbss', true);
-    changeField('bssbb', true);
-    changeField('bssbs', true);
-    changeField('bsssb', true);
-    changeField('bssss', true);
-    changeField('sbbbb', true);
-    changeField('sbbbs', true);
-    changeField('sbbsb', true);
-    changeField('sbbss', true);
-    changeField('sbsbb', true);
-    changeField('sbsbs', true);
-    changeField('sbssb', true);
-    changeField('sbsss', true);
-    changeField('ssbbb', true);
-    changeField('ssbbs', true);
-    changeField('ssbsb', true);
-    changeField('ssbss', true);
-    changeField('sssbb', true);
-    changeField('sssbs', true);
-    changeField('ssssb', true);
-    changeField('sssss', true);
+    changeField('ppppp', true);
+    changeField('ppppc', true);
+    changeField('pppcp', true);
+    changeField('pppcc', true);
+    changeField('ppcpp', true);
+    changeField('ppcpc', true);
+    changeField('ppccp', true);
+    changeField('ppccc', true);
+    changeField('pcppp', true);
+    changeField('pcppc', true);
+    changeField('pcpcp', true);
+    changeField('pcpcc', true);
+    changeField('pccpp', true);
+    changeField('pccpc', true);
+    changeField('pcccp', true);
+    changeField('pcccc', true);
+    changeField('cpppp', true);
+    changeField('cpppc', true);
+    changeField('cppcp', true);
+    changeField('cppcc', true);
+    changeField('cpcpp', true);
+    changeField('cpcpc', true);
+    changeField('cpccp', true);
+    changeField('cpccc', true);
+    changeField('ccppp', true);
+    changeField('ccppc', true);
+    changeField('ccpcp', true);
+    changeField('ccpcc', true);
+    changeField('cccpp', true);
+    changeField('cccpc', true);
+    changeField('ccccp', true);
+    changeField('ccccc', true);
   }
 
   render() {
     return (
       <div style={styles.wrapper}>
         <div style={styles.titleLine}>
-          <span>【杀大小】</span>
+          <span>【杀质合】</span>
           <button
             type="button"
             key="clear"
@@ -182,152 +182,152 @@ class BigSmallSection extends PureComponent<Props> {
         <div style={styles.formWrapper}>
           <div style={styles.boxWrapper}>
             <Field
-              name="bbbbb"
-              label="大大大大大"
+              name="ppppp"
+              label="质质质质质"
               component={CheckBox} />
             <Field
-              name="bbbbs"
-              label="大大大大小"
+              name="ppppc"
+              label="质质质质合"
               component={CheckBox} />
             <Field
-              name="bbbsb"
-              label="大大大小大"
+              name="pppcp"
+              label="质质质合质"
               component={CheckBox} />
             <Field
-              name="bbbss"
-              label="大大大小小"
-              component={CheckBox} />
-          </div>
-          <div style={styles.boxWrapper}>
-            <Field
-              name="sbbbb"
-              label="小大大大大"
-              component={CheckBox} />
-            <Field
-              name="sbbbs"
-              label="小大大大小"
-              component={CheckBox} />
-            <Field
-              name="sbbsb"
-              label="小大大小大"
-              component={CheckBox} />
-            <Field
-              name="sbbss"
-              label="小大大小小"
-              component={CheckBox} />
-          </div>
-        </div>
-        <div style={styles.formWrapper}>
-          <div style={styles.boxWrapper}>
-            <Field
-              name="bbsbb"
-              label="大大小大大"
-              component={CheckBox} />
-            <Field
-              name="bbsbs"
-              label="大大小大小"
-              component={CheckBox} />
-            <Field
-              name="bbssb"
-              label="大大小小大"
-              component={CheckBox} />
-            <Field
-              name="bbsss"
-              label="大大小小小"
+              name="pppcc"
+              label="质质质合合"
               component={CheckBox} />
           </div>
           <div style={styles.boxWrapper}>
             <Field
-              name="sbsbb"
-              label="小大小大大"
+              name="cpppp"
+              label="合质质质质"
               component={CheckBox} />
             <Field
-              name="sbsbs"
-              label="小大小大小"
+              name="cpppc"
+              label="合质质质合"
               component={CheckBox} />
             <Field
-              name="sbssb"
-              label="小大小小大"
+              name="cppcp"
+              label="合质质合质"
               component={CheckBox} />
             <Field
-              name="sbsss"
-              label="小大小小小"
+              name="cppcc"
+              label="合质质合合"
               component={CheckBox} />
           </div>
         </div>
         <div style={styles.formWrapper}>
           <div style={styles.boxWrapper}>
             <Field
-              name="bsbbb"
-              label="大小大大大"
+              name="ppcpp"
+              label="质质合质质"
               component={CheckBox} />
             <Field
-              name="bsbbs"
-              label="大小大大小"
+              name="ppcpc"
+              label="质质合质合"
               component={CheckBox} />
             <Field
-              name="bsbsb"
-              label="大小大小大"
+              name="ppccp"
+              label="质质合合质"
               component={CheckBox} />
             <Field
-              name="bsbss"
-              label="大小大小小"
+              name="ppccc"
+              label="质质合合合"
               component={CheckBox} />
           </div>
           <div style={styles.boxWrapper}>
             <Field
-              name="ssbbb"
-              label="小小大大大"
+              name="cpcpp"
+              label="合质合质质"
               component={CheckBox} />
             <Field
-              name="ssbbs"
-              label="小小大大小"
+              name="cpcpc"
+              label="合质合质合"
               component={CheckBox} />
             <Field
-              name="ssbsb"
-              label="小小大小大"
+              name="cpccp"
+              label="合质合合质"
               component={CheckBox} />
             <Field
-              name="ssbss"
-              label="小小大小小"
+              name="cpccc"
+              label="合质合合合"
               component={CheckBox} />
           </div>
         </div>
         <div style={styles.formWrapper}>
           <div style={styles.boxWrapper}>
             <Field
-              name="bssbb"
-              label="大小小大大"
+              name="pcppp"
+              label="质合质质质"
               component={CheckBox} />
             <Field
-              name="bssbs"
-              label="大小小大小"
+              name="pcppc"
+              label="质合质质合"
               component={CheckBox} />
             <Field
-              name="bsssb"
-              label="大小小小大"
+              name="pcpcp"
+              label="质合质合质"
               component={CheckBox} />
             <Field
-              name="bssss"
-              label="大小小小小"
+              name="pcpcc"
+              label="质合质合合"
               component={CheckBox} />
           </div>
           <div style={styles.boxWrapper}>
             <Field
-              name="sssbb"
-              label="小小小大大"
+              name="ccppp"
+              label="合合质质质"
               component={CheckBox} />
             <Field
-              name="sssbs"
-              label="小小小大小"
+              name="ccppc"
+              label="合合质质合"
               component={CheckBox} />
             <Field
-              name="ssssb"
-              label="小小小小大"
+              name="ccpcp"
+              label="合合质合质"
               component={CheckBox} />
             <Field
-              name="sssss"
-              label="小小小小小"
+              name="ccpcc"
+              label="合合质合合"
+              component={CheckBox} />
+          </div>
+        </div>
+        <div style={styles.formWrapper}>
+          <div style={styles.boxWrapper}>
+            <Field
+              name="pccpp"
+              label="质合合质质"
+              component={CheckBox} />
+            <Field
+              name="pccpc"
+              label="质合合质合"
+              component={CheckBox} />
+            <Field
+              name="pcccp"
+              label="质合合合质"
+              component={CheckBox} />
+            <Field
+              name="pcccc"
+              label="质合合合合"
+              component={CheckBox} />
+          </div>
+          <div style={styles.boxWrapper}>
+            <Field
+              name="cccpp"
+              label="合合合质质"
+              component={CheckBox} />
+            <Field
+              name="cccpc"
+              label="合合合质合"
+              component={CheckBox} />
+            <Field
+              name="ccccp"
+              label="合合合合质"
+              component={CheckBox} />
+            <Field
+              name="ccccc"
+              label="合合合合合"
               component={CheckBox} />
           </div>
         </div>
@@ -345,4 +345,4 @@ const reduxHook = connect(
   }, dispatch),
 );
 
-export default reduxHook(radium(BigSmallSection));
+export default reduxHook(radium(PrimeCompositeSection));

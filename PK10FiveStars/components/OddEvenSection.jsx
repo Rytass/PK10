@@ -162,7 +162,7 @@ class OddEvenSection extends PureComponent<Props> {
   render() {
     return (
       <div style={styles.wrapper}>
-        <div etlye={styles.titleLine}>
+        <div style={styles.titleLine}>
           <span>【杀奇偶】</span>
           <button
             type="button"

@@ -11,6 +11,7 @@ import initNumberPool from '../helper/init';
 import ResultSection from '../components/ResultSection';
 import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
+import PrimeCompositeSection from '../components/PrimeCompositeSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
 import { MAIN_FORM } from '../shared/form';
 import { NO_RESULT } from '../shared/message';
@@ -82,6 +83,7 @@ class MainPage extends PureComponent<Props> {
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
         <BigSmallSection />
         <OddEvenSection />
+        <PrimeCompositeSection />
         <ResultSection isRunning={!!runningOptions} />
       </form>
     );
