@@ -5,11 +5,14 @@ import radium from 'radium';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
+  Field,
   initialize,
   change,
   formValueSelector,
 } from 'redux-form';
 import ResultArea from './ResultArea';
+import NumberTextInput from './Form/NumberTextInput';
+import { INIT_FORM_VALUE } from '../shared/initValue';
 import { MAIN_FORM } from '../shared/form';
 
 const selector = formValueSelector(MAIN_FORM);
@@ -26,6 +29,19 @@ const styles = {
     padding: '10px 16px',
     margin: '4px 8px 8px 8px',
     border: '1px solid #4a4a4a',
+  },
+  failWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: '0 6px 12px 6px',
+  },
+  label: {
+    fontSize: 14,
+    letterSpacing: 1,
+    color: '#4a4a4a',
   },
   buttonWrapper: {
     display: 'flex',
@@ -99,6 +115,16 @@ class ResultSection extends PureComponent<Props> {
     return (
       <div style={styles.wrapper}>
         <ResultArea resultNumber={resultNumber} isRunning={isRunning} />
+        <div style={styles.failWrapper}>
+          <span style={styles.label}>容错级别</span>
+          <Field
+            name="failFrom"
+            component={NumberTextInput} />
+          <span style={styles.label}>-</span>
+          <Field
+            name="failTo"
+            component={NumberTextInput} />
+        </div>
         <div style={styles.buttonWrapper}>
           <button
             type="submit"
@@ -125,9 +151,7 @@ const reduxHook = connect(
   }),
   dispatch => bindActionCreators({
     changeResultNumber: value => change(MAIN_FORM, 'resultNumber', value),
-    clearForm: () => initialize(MAIN_FORM, {
-      resultNumber: [],
-    }),
+    clearForm: () => initialize(MAIN_FORM, INIT_FORM_VALUE),
   }, dispatch),
 );
 
