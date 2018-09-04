@@ -30,6 +30,12 @@ const styles = {
     justifyContent: 'flex-start',
     position: 'relative',
   },
+  boxSectionWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
 };
 
 type Props = {
@@ -90,9 +96,11 @@ class MainPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
-        <BigSmallSection />
-        <OddEvenSection />
-        <PrimeCompositeSection />
+        <div style={styles.boxSectionWrapper}>
+          <BigSmallSection />
+          <OddEvenSection />
+          <PrimeCompositeSection />
+        </div>
         <ResultSection isRunning={!!runningOptions} />
       </form>
     );
