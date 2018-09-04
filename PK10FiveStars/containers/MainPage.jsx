@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react';
 import {
   change,
   reduxForm,
+  formValueSelector,
 } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -15,6 +16,9 @@ import PrimeCompositeSection from '../components/PrimeCompositeSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
 import { MAIN_FORM } from '../shared/form';
 import { NO_RESULT } from '../shared/message';
+import { FILTER_ACTIONS } from '../shared/actions';
+
+const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
@@ -31,12 +35,12 @@ const styles = {
 type Props = {
   handleSubmit: Function,
   changeResultNumber: Function,
+  failFrom: number,
+  failTo: number,
 }
 
 class MainPage extends PureComponent<Props> {
-  static ACTIONS = [
-
-  ];
+  static ACTIONS = FILTER_ACTIONS;
 
   state = {
     runningOptions: null,
@@ -50,10 +54,15 @@ class MainPage extends PureComponent<Props> {
     if (!prevState.runningOptions && runningOptions) {
       const {
         changeResultNumber,
+        failFrom,
+        failTo,
       } = this.props;
 
       setTimeout(() => {
-        const result = initNumberPool();
+        const result = MainPage.ACTIONS
+          .reduce((prev, curr) => curr(prev, runningOptions), initNumberPool())
+          .filter(num => (
+            num.killFailedCount >= failFrom && failTo >= num.killFailedCount));
 
         if (!result.length) {
           changeResultNumber([NO_RESULT]);
@@ -97,8 +106,9 @@ const formHook = reduxForm({
 });
 
 const reduxHook = connect(
-  () => ({
-
+  state => ({
+    failFrom: selector(state, 'failFrom'),
+    failTo: selector(state, 'failTo'),
   }),
   dispatch => bindActionCreators({
     changeResultNumber: value => change(MAIN_FORM, 'resultNumber', value),
