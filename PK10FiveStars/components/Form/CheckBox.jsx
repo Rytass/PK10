@@ -52,9 +52,11 @@ class CheckBox extends PureComponent {
           checked={value}
           onChange={onChange}
           type="checkbox" />
-        <span style={styles.label}>
+        <label
+          htmlFor={`${form}:${name}`}
+          style={styles.label}>
           {label}
-        </span>
+        </label>
       </div>
     );
   }

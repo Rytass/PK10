@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
 import ResultSection from '../components/ResultSection';
+import BigSmallSection from '../components/BigSmallSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
 import { MAIN_FORM } from '../shared/form';
 import { NO_RESULT } from '../shared/message';
@@ -18,7 +19,7 @@ const styles = {
     padding: 8,
     width: '100%',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     position: 'relative',
@@ -78,6 +79,7 @@ class MainPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
+        <BigSmallSection />
         <ResultSection isRunning={!!runningOptions} />
       </form>
     );
