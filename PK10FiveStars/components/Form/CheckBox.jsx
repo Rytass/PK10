@@ -8,6 +8,7 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    margin: '1px 0',
   },
   label: {
     fontSize: 12,
