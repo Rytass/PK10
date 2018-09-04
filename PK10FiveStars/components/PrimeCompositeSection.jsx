@@ -28,6 +28,11 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  title: {
+    fontSize: 14,
+    color: '#4a4a4a',
+    letterSpacing: 1,
+  },
   formWrapper: {
     display: 'flex',
     alignSelf: 'stretch',
@@ -163,7 +168,7 @@ class PrimeCompositeSection extends PureComponent<Props> {
     return (
       <div style={styles.wrapper}>
         <div style={styles.titleLine}>
-          <span>【杀质合】</span>
+          <span style={styles.title}>【杀质合】</span>
           <button
             type="button"
             key="clear"
