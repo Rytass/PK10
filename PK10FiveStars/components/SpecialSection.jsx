@@ -13,6 +13,7 @@ import CheckBox from './Form/CheckBox';
 
 const styles = {
   wrapper: {
+    alignSelf: 'stretch',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -68,7 +69,7 @@ class SpecialSection extends PureComponent<Props> {
   render() {
     return (
       <div style={styles.wrapper}>
-        <span style={styles.title}>特別排除</span>
+        <span style={styles.title}>【特別排除】</span>
         <Field
           name="noContinuous"
           label="不连"

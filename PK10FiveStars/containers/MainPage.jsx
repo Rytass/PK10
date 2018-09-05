@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
+import CrossTailSection from '../components/CrossTailSection';
 import ResultSection from '../components/ResultSection';
 import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
@@ -30,6 +31,12 @@ const styles = {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     position: 'relative',
+  },
+  sectionWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   boxSectionWrapper: {
     display: 'flex',
@@ -97,7 +104,10 @@ class MainPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
-        <div>
+        <div style={styles.sectionWrapper}>
+          <CrossTailSection />
+        </div>
+        <div style={styles.sectionWrapper}>
           <div style={styles.boxSectionWrapper}>
             <BigSmallSection />
             <OddEvenSection />
