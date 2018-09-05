@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
 import CrossTailSection from '../components/CrossTailSection';
+import MaxMinSection from '../components/MaxMinSection';
 import ResultSection from '../components/ResultSection';
 import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
@@ -106,6 +107,7 @@ class MainPage extends PureComponent<Props> {
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
         <div style={styles.sectionWrapper}>
           <CrossTailSection />
+          <MaxMinSection />
         </div>
         <div style={styles.sectionWrapper}>
           <div style={styles.boxSectionWrapper}>
