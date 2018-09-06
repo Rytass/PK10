@@ -14,12 +14,13 @@ import TextArea from './Form/TextArea.jsx';
 
 const styles = {
   wrapper: {
+    height: 150,
     display: 'flex',
     alignSelf: 'stretch',
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    padding: '6px 8px',
+    padding: '12px 8px',
     margin: '4px 8px',
     border: '1px solid #4a4a4a',
   },

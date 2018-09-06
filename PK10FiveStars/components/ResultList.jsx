@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { NO_RESULT } from '../shared/message';
+import { transNumber } from '../helper/operator';
 
 const styles = {
   line: {
@@ -39,16 +40,8 @@ function ResultList({
               );
             }
 
-            const number = value.num;
-            const splitNum = number.split('').map((num) => {
-              if (num === '0') return '10';
-
-              return `0${num}`;
-            });
-            const resultNum = splitNum.join('\xa0\xa0');
-
             return (
-              <span key={value.num} style={styles.value}>{resultNum}</span>
+              <span key={value.num} style={styles.value}>{transNumber(value.num)}</span>
             );
           })}
         </p>

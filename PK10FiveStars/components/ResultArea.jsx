@@ -5,6 +5,7 @@ import chunk from 'lodash/chunk';
 import { ipcRenderer } from 'electron';
 import VirtualList from 'react-virtual-list';
 import ResultList from './ResultList';
+import { transNumber } from '../helper/operator';
 import { NO_RESULT } from '../shared/message';
 
 const styles = {
@@ -75,7 +76,7 @@ class ResultArea extends PureComponent<Props> {
     };
 
     this.onContextMenu = () => {
-      ipcRenderer.send('CLIPBOARD_CACHE', this.props.resultNumber.map(num => num.num).join(' '));
+      ipcRenderer.send('CLIPBOARD_CACHE', this.props.resultNumber.map(num => transNumber(num.num)).join(' '));
     };
   }
 

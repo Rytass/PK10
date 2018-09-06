@@ -39,7 +39,7 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    margin: '5px 0',
+    margin: '8px 0',
   },
   boxWrapper: {
     display: 'flex',

@@ -14,6 +14,7 @@ const styles = {
   },
   textArea: {
     width: '100%',
+    height: '100%',
     outline: 'none',
     fontSize: 12,
     letterSpacing: 1,
