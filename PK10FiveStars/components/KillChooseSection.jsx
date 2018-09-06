@@ -34,7 +34,7 @@ const styles = {
     fontSize: 13,
     letterSpacing: 1,
     color: '#4a4a4a',
-    margin: '2px 0',
+    margin: '2px 0 6px 0',
   },
   btnWrapper: {
     display: 'flex',

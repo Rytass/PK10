@@ -86,6 +86,7 @@ class BileSetFieldArray extends PureComponent {
     } = this.props;
 
     clearNumber(name);
+    clearBileNumber(`zeroOf${name}`);
     clearBileNumber(`oneOf${name}`);
     clearBileNumber(`twoOf${name}`);
     clearBileNumber(`threeOf${name}`);

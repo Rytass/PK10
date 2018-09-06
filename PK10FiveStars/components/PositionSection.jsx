@@ -77,7 +77,7 @@ const styles = {
     backgroundColor: '#f2f2f2',
     fontSize: 13,
     letterSpacing: 1,
-    margin: '0 2px 0 10px',
+    margin: '0 2px 0 24px',
     color: '#4a4a4a',
     ':hover': {
       backgroundColor: '#eaeaea',
