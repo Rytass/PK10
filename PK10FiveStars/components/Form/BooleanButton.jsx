@@ -27,7 +27,7 @@ const styles = {
     },
   },
   activedBtn: {
-    backgroundColor: '#62f442',
+    backgroundColor: '#f0f72e',
   },
 };
 

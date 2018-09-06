@@ -14,15 +14,18 @@ import TextArea from './Form/TextArea.jsx';
 
 const styles = {
   wrapper: {
-    height: 150,
+    width: 200,
+    flex: 1,
     display: 'flex',
     alignSelf: 'stretch',
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    padding: '12px 8px',
-    margin: '4px 8px',
-    border: '1px solid #4a4a4a',
+    padding: '22px 8px 12px 8px',
+    margin: '0 8px',
+    borderWidth: '0 1px 1px 1px',
+    borderColor: '#4a4a4a',
+    borderStyle: 'solid',
   },
   title: {
     fontSize: 13,
@@ -34,7 +37,7 @@ const styles = {
     fontSize: 13,
     letterSpacing: 1,
     color: '#4a4a4a',
-    margin: '2px 0',
+    margin: '6px 0',
   },
   btnWrapper: {
     display: 'flex',
@@ -42,9 +45,16 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '0 0 0 12px',
+  },
+  buttonsWrapper: {
+    display: 'flex',
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   actionBtn: {
+    flex: 1,
     border: '1px solid #4a4a4a',
     padding: '6px 8px',
     margin: '0 1px',
@@ -66,7 +76,7 @@ type Props = {
   changeField: Function,
 }
 
-class KillChooseSection extends PureComponent<Props> {
+class BaseSection extends PureComponent<Props> {
   render() {
     const {
       changeField,
@@ -75,12 +85,12 @@ class KillChooseSection extends PureComponent<Props> {
     return (
       <div style={styles.wrapper}>
         <Field
-          name="killChoose"
-          placeholder="杀直选大底"
+          name="base"
+          placeholder="大底号码"
           component={TextArea} />
         <div style={styles.btnWrapper}>
           <span style={styles.numberText}>0注</span>
-          <div>
+          <div style={styles.buttonsWrapper}>
             <button
               type="button"
               key="paste"
@@ -107,8 +117,8 @@ const reduxHook = connect(
 
   }),
   dispatch => bindActionCreators({
-    changeField: value => change(MAIN_FORM, 'killChoose', value),
+    changeField: value => change(MAIN_FORM, 'base', value),
   }, dispatch),
 );
 
-export default reduxHook(radium(KillChooseSection));
+export default reduxHook(radium(BaseSection));

@@ -27,8 +27,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: '10px 16px',
-    margin: '4px 8px 8px 8px',
-    border: '1px solid #4a4a4a',
+    margin: '4px 8px 0 8px',
+    borderWidth: '1px 1px 0 1px',
+    borderColor: '#4a4a4a',
+    borderStyle: 'solid',
   },
   failWrapper: {
     display: 'flex',

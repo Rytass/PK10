@@ -18,6 +18,7 @@ import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
 import PrimeCompositeSection from '../components/PrimeCompositeSection';
 import SpecialSection from '../components/SpecialSection';
+import BaseSection from '../components/BaseSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
 import { MAIN_FORM } from '../shared/form';
 import { NO_RESULT } from '../shared/message';
@@ -51,6 +52,12 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+  resultWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'flex-start',
   },
 };
@@ -131,7 +138,10 @@ class MainPage extends PureComponent<Props> {
             </div>
           </div>
         </div>
-        <ResultSection isRunning={!!runningOptions} />
+        <div style={styles.resultWrapper}>
+          <ResultSection isRunning={!!runningOptions} />
+          <BaseSection />
+        </div>
       </form>
     );
   }
