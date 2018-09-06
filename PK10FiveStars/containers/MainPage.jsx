@@ -13,6 +13,7 @@ import KillChooseSection from '../components/KillChooseSection';
 import PositionSection from '../components/PositionSection';
 import CrossTailSection from '../components/CrossTailSection';
 import MaxMinSection from '../components/MaxMinSection';
+import BileSetSection from '../components/BileSetSection';
 import ResultSection from '../components/ResultSection';
 import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
@@ -127,6 +128,7 @@ class MainPage extends PureComponent<Props> {
               <PositionSection />
               <CrossTailSection />
               <MaxMinSection />
+              <BileSetSection />
             </div>
             <div style={styles.sectionWrapper}>
               <div style={styles.boxSectionWrapper}>

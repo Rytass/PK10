@@ -87,8 +87,8 @@ let mainWindow: ?{
 
 app.on('ready', () => {
   const config = {
-    width: 1360,
-    height: 880,
+    width: 1420,
+    height: 800,
     resizable: false,
   };
 
