@@ -171,17 +171,17 @@ class PrimeCompositeSection extends PureComponent<Props> {
           <span style={styles.title}>【杀质合】</span>
           <button
             type="button"
-            key="clear"
-            onClick={() => this.clearValue()}
-            style={styles.clearBtn}>
-            清
-          </button>
-          <button
-            type="button"
             key="all"
             onClick={() => this.allValue()}
             style={styles.allBtn}>
             全
+          </button>
+          <button
+            type="button"
+            key="clear"
+            onClick={() => this.clearValue()}
+            style={styles.clearBtn}>
+            清
           </button>
         </div>
         <div style={styles.formWrapper}>

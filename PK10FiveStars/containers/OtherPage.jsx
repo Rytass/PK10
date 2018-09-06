@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
+import TypeSection from '../components/TypeSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { MAIN_FORM } from '../shared/form';
@@ -26,6 +27,13 @@ const styles = {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     position: 'relative',
+  },
+  sectionWrapper: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   resultWrapper: {
     display: 'flex',
@@ -93,6 +101,9 @@ class OtherPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
+        <div style={styles.sectionWrapper}>
+          <TypeSection />
+        </div>
         <div style={styles.resultWrapper}>
           <ResultSection isRunning={!!runningOptions} />
           <BaseSection />
