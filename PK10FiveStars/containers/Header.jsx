@@ -40,7 +40,14 @@ function Header() {
         key="two"
         style={styles.link}
         to="/two">
-        殺/出二碼組合
+        杀/出二码组合/二码跨/二码合/三码合/四码合
+      </NavLink>
+      <NavLink
+        className="hover-btn"
+        key="other"
+        style={styles.link}
+        to="/other">
+        杀012路/杀和值/型态个数
       </NavLink>
     </nav>
   );
