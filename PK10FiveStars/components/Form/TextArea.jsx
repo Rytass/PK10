@@ -5,6 +5,7 @@ import { ipcRenderer } from 'electron';
 
 const styles = {
   wrapper: {
+    flex: 1,
     display: 'flex',
     alignSelf: 'stretch',
     flexDirection: 'row',
@@ -37,7 +38,7 @@ class TextArea extends PureComponent {
     this.scrollContainer = React.createRef();
 
     this.onContextMenu = () => {
-      ipcRenderer.send('CLIPBOARD_CACHE', props.input.value);
+      ipcRenderer.send('CLIPBOARD_CACHE', this.props.input.value);
     };
   }
 

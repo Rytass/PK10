@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
+import KillChooseSection from '../components/KillChooseSection';
 import PositionSection from '../components/PositionSection';
 import CrossTailSection from '../components/CrossTailSection';
 import MaxMinSection from '../components/MaxMinSection';
@@ -33,6 +34,12 @@ const styles = {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     position: 'relative',
+  },
+  bigWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   sectionWrapper: {
     display: 'flex',
@@ -106,18 +113,23 @@ class MainPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
-        <div style={styles.sectionWrapper}>
-          <PositionSection />
-          <CrossTailSection />
-          <MaxMinSection />
-        </div>
-        <div style={styles.sectionWrapper}>
-          <div style={styles.boxSectionWrapper}>
-            <BigSmallSection />
-            <OddEvenSection />
-            <PrimeCompositeSection />
+        <div>
+          <KillChooseSection />
+          <div style={styles.bigWrapper}>
+            <div style={styles.sectionWrapper}>
+              <PositionSection />
+              <CrossTailSection />
+              <MaxMinSection />
+            </div>
+            <div style={styles.sectionWrapper}>
+              <div style={styles.boxSectionWrapper}>
+                <BigSmallSection />
+                <OddEvenSection />
+                <PrimeCompositeSection />
+              </div>
+              <SpecialSection />
+            </div>
           </div>
-          <SpecialSection />
         </div>
         <ResultSection isRunning={!!runningOptions} />
       </form>

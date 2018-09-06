@@ -2,6 +2,7 @@ export const INIT_FORM_VALUE = {
   resultNumber: [],
   failFrom: 0,
   failTo: 0,
+  killChoose: '',
   bbbbb: false,
   bbbbs: false,
   bbbsb: false,
