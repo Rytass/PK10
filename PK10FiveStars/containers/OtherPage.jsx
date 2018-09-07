@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
+import ZeroOneTwoSection from '../components/ZeroOneTwoSection';
 import KillSumSection from '../components/KillSumSection';
 import TypeSection from '../components/TypeSection';
 import ResultSection from '../components/ResultSection';
@@ -103,6 +104,7 @@ class OtherPage extends PureComponent<Props> {
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
         <div style={styles.sectionWrapper}>
+          <ZeroOneTwoSection />
           <KillSumSection />
           <TypeSection />
         </div>

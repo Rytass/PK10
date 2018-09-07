@@ -219,6 +219,7 @@ export const INIT_FORM_VALUE = {
   fifthTen: false,
   positionFailFrom: 0,
   positionFailTo: 0,
+  zeroOneTwo: '',
   killSumFifteen: false,
   killSumSixteen: false,
   killSumSeventeen: false,
