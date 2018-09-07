@@ -32,10 +32,11 @@ const styles = {
   },
   sectionWrapper: {
     flex: 1,
+    alignSelf: 'stretch',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
   },
   resultWrapper: {
     display: 'flex',

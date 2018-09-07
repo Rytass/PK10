@@ -13,14 +13,15 @@ import BooleanButton from './Form/BooleanButton';
 
 const styles = {
   wrapper: {
+    flex: 1,
     alignSelf: 'stretch',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     padding: '12px 8px 8px 8px',
     border: '1px solid #4a4a4a',
-    margin: '4px 8px 8px 8px',
+    margin: '4px 8px 0 8px',
   },
   main: {
     alignSelf: 'stretch',
@@ -42,7 +43,7 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    padding: '2px 0',
+    padding: '4px 0',
   },
   button: {
     width: 45,

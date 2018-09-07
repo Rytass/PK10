@@ -17,11 +17,12 @@ const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
+    flex: 1,
     alignSelf: 'stretch',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     padding: '12px 8px 8px 8px',
     border: '1px solid #4a4a4a',
     margin: '4px 8px 8px 8px',
