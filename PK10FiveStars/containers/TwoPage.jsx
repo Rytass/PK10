@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
 import KillTwoSetSection from '../components/KillTwoSetSection';
+import KeepTwoSetSection from '../components/KeepTwoSetSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { MAIN_FORM } from '../shared/form';
@@ -104,6 +105,7 @@ class TwoPage extends PureComponent<Props> {
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
         <div style={styles.sectionWrapper}>
           <KillTwoSetSection />
+          <KeepTwoSetSection />
         </div>
         <div style={styles.resultWrapper}>
           <ResultSection isRunning={!!runningOptions} />
