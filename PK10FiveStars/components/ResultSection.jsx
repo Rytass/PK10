@@ -38,7 +38,7 @@ const styles = {
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    padding: '0 6px 12px 6px',
+    padding: '0 0 12px 6px',
   },
   label: {
     fontSize: 14,
@@ -118,7 +118,7 @@ class ResultSection extends PureComponent<Props> {
       <div style={styles.wrapper}>
         <ResultArea resultNumber={resultNumber} isRunning={isRunning} />
         <div style={styles.failWrapper}>
-          <span style={styles.label}>容错级别</span>
+          <span style={styles.label}>条件总容错</span>
           <Field
             name="failFrom"
             component={NumberTextInput} />
@@ -139,7 +139,7 @@ class ResultSection extends PureComponent<Props> {
             key="clear"
             onClick={() => clearForm()}
             style={styles.clearBtn}>
-            清空所有条件
+            清空条件
           </button>
         </div>
       </div>

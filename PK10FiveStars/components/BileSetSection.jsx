@@ -34,7 +34,7 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    margin: '0 24px 0 0',
+    margin: '0 224px 0 0',
   },
   title: {
     fontSize: 14,
