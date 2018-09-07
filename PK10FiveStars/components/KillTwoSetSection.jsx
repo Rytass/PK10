@@ -58,7 +58,7 @@ const styles = {
   clearBtn: {
     alignSelf: 'stretch',
     border: '1px solid #4a4a4a',
-    padding: '0 16px',
+    padding: '0 8px',
     backgroundColor: '#f2f2f2',
     fontSize: 13,
     letterSpacing: 1,
@@ -75,7 +75,7 @@ const styles = {
   allBtn: {
     alignSelf: 'stretch',
     border: '1px solid #4a4a4a',
-    padding: '0 16px',
+    padding: '0 8px',
     backgroundColor: '#f2f2f2',
     fontSize: 13,
     letterSpacing: 1,
@@ -329,7 +329,7 @@ class KillTwoSetSection extends PureComponent<Props> {
                 key="all"
                 onClick={() => this.allValue()}
                 style={styles.allBtn}>
-                全
+                全选
               </button>
             </div>
             <div style={styles.lineWrapper}>
@@ -449,7 +449,7 @@ class KillTwoSetSection extends PureComponent<Props> {
                 key="clear"
                 onClick={() => this.clearValue()}
                 style={styles.clearBtn}>
-                清
+                清空
               </button>
             </div>
           </div>

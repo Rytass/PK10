@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
 import KillTwoSetSection from '../components/KillTwoSetSection';
 import KeepTwoSetSection from '../components/KeepTwoSetSection';
+import KeepCrossFitSection from '../components/KeepCrossFitSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { MAIN_FORM } from '../shared/form';
@@ -106,6 +107,7 @@ class TwoPage extends PureComponent<Props> {
         <div style={styles.sectionWrapper}>
           <KillTwoSetSection />
           <KeepTwoSetSection />
+          <KeepCrossFitSection />
         </div>
         <div style={styles.resultWrapper}>
           <ResultSection isRunning={!!runningOptions} />
