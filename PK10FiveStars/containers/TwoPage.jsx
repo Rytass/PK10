@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
+import KillTwoSetSection from '../components/KillTwoSetSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { MAIN_FORM } from '../shared/form';
@@ -26,6 +27,14 @@ const styles = {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     position: 'relative',
+  },
+  sectionWrapper: {
+    flex: 1,
+    alignSelf: 'stretch',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
   },
   resultWrapper: {
     display: 'flex',
@@ -93,6 +102,9 @@ class TwoPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
+        <div style={styles.sectionWrapper}>
+          <KillTwoSetSection />
+        </div>
         <div style={styles.resultWrapper}>
           <ResultSection isRunning={!!runningOptions} />
           <BaseSection />
