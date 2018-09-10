@@ -8,6 +8,9 @@ import {
 import { bigSmallKiller } from '../helper/bigSmallKiller';
 import { oddEvenKiller } from '../helper/oddEvenKiller';
 import { primeCompositeKiller } from '../helper/primeCompositeKiller';
+import {
+  bigTypeKeeper,
+} from '../helper/typeKeeper';
 
 export const FILTER_ACTIONS = [
   positionKiller,
@@ -18,6 +21,7 @@ export const FILTER_ACTIONS = [
   bigSmallKiller,
   oddEvenKiller,
   primeCompositeKiller,
+  bigTypeKeeper,
 ];
 
 export default {
