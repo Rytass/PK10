@@ -322,3 +322,53 @@ export function oneLoadTypeKeeper(numbers, options) {
 
   return numbers;
 }
+
+export function twoLoadTypeKeeper(numbers, options) {
+  const composed = Object.entries(options)
+    .filter(entry => entry[0].match(/twoLoadType/) && entry[1] === true);
+
+  if (!composed.length) return numbers;
+
+  const result = [
+    ...numbers.filter((num) => {
+      if (options.twoLoadTypeZero) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[258]/)).length === 0
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.twoLoadTypeOne) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[258]/)).length === 1
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.twoLoadTypeTwo) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[258]/)).length === 2
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.twoLoadTypeThree) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[258]/)).length === 3
+        );
+      }
+
+      return false;
+    }),
+  ];
+
+  difference(numbers, result).forEach(num => num.killFailed());
+
+  return numbers;
+}
