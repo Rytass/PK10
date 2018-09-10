@@ -1,4 +1,5 @@
 import { baseKiller } from '../helper/baseKiller';
+import { chooseKiller } from '../helper/chooseKiller';
 import { positionKiller } from '../helper/positionKiller';
 import { acrossKiller } from '../helper/acrossKiller';
 import { tailKiller } from '../helper/tailKiller';
@@ -24,6 +25,7 @@ import {
 
 export const FILTER_ACTIONS = [
   baseKiller,
+  chooseKiller,
   positionKiller,
   acrossKiller,
   tailKiller,
