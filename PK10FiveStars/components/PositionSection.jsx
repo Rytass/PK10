@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MAIN_FORM } from '../shared/form';
 import BooleanButton from './Form/BooleanButton';
-import NumberTextInput from './Form/NumberTextInput';
 
 const styles = {
   wrapper: {
@@ -36,7 +35,7 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    margin: '0 224px 0 0',
+    margin: '0 150px 0 0',
   },
   lineWrapper: {
     alignSelf: 'stretch',
@@ -50,6 +49,12 @@ const styles = {
     fontSize: 14,
     color: '#4a4a4a',
     letterSpacing: 1,
+  },
+  failTitle: {
+    fontSize: 14,
+    color: '#4a4a4a',
+    letterSpacing: 1,
+    margin: '0 4px 0 0',
   },
   button: {
     width: 25,
@@ -134,14 +139,37 @@ class PositionSection extends PureComponent<Props> {
         <div style={styles.titleWrapper}>
           <span style={styles.title}>【定位杀】</span>
           <div style={styles.failWrapper}>
-            <span style={styles.title}>容错级别</span>
+            <span style={styles.failTitle}>容错级别</span>
             <Field
-              name="positionFailFrom"
-              component={NumberTextInput} />
-            <span style={styles.title}>至</span>
+              name="positionFaultZero"
+              text="0"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
             <Field
-              name="positionFailTo"
-              component={NumberTextInput} />
+              name="positionFaultOne"
+              text="1"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
+            <Field
+              name="positionFaultTwo"
+              text="2"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
+            <Field
+              name="positionFaultThree"
+              text="3"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
+            <Field
+              name="positionFaultFour"
+              text="4"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
+            <Field
+              name="positionFaultFive"
+              text="5"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
           </div>
         </div>
         <div style={styles.lineWrapper}>

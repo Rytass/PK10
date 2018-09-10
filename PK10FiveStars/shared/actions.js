@@ -1,3 +1,4 @@
+import { positionKiller } from '../helper/positionKiller';
 import { acrossKiller } from '../helper/acrossKiller';
 import { tailKiller } from '../helper/tailKiller';
 import {
@@ -9,6 +10,7 @@ import { oddEvenKiller } from '../helper/oddEvenKiller';
 import { primeCompositeKiller } from '../helper/primeCompositeKiller';
 
 export const FILTER_ACTIONS = [
+  positionKiller,
   acrossKiller,
   tailKiller,
   maxKeeper,
