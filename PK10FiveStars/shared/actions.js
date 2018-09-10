@@ -1,3 +1,4 @@
+import { baseKiller } from '../helper/baseKiller';
 import { positionKiller } from '../helper/positionKiller';
 import { acrossKiller } from '../helper/acrossKiller';
 import { tailKiller } from '../helper/tailKiller';
@@ -22,6 +23,7 @@ import {
 } from '../helper/typeKeeper';
 
 export const FILTER_ACTIONS = [
+  baseKiller,
   positionKiller,
   acrossKiller,
   tailKiller,
