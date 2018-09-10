@@ -6,11 +6,14 @@ import radium from 'radium';
 import {
   Field,
   change,
+  formValueSelector,
 } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MAIN_FORM } from '../shared/form';
 import TextArea from './Form/TextArea.jsx';
+
+const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
@@ -64,12 +67,14 @@ const styles = {
 
 type Props = {
   changeField: Function,
+  killChooseLength: number,
 }
 
 class KillChooseSection extends PureComponent<Props> {
   render() {
     const {
       changeField,
+      killChooseLength,
     } = this.props;
 
     return (
@@ -79,7 +84,9 @@ class KillChooseSection extends PureComponent<Props> {
           placeholder="杀直选大底"
           component={TextArea} />
         <div style={styles.btnWrapper}>
-          <span style={styles.numberText}>0注</span>
+          <span style={styles.numberText}>
+            {`${killChooseLength}注`}
+          </span>
           <div>
             <button
               type="button"
@@ -103,8 +110,8 @@ class KillChooseSection extends PureComponent<Props> {
 }
 
 const reduxHook = connect(
-  () => ({
-
+  state => ({
+    killChooseLength: selector(state, 'killChoose').split(/[\n(\r\n)]/).filter(t => t).length,
   }),
   dispatch => bindActionCreators({
     changeField: value => change(MAIN_FORM, 'killChoose', value),

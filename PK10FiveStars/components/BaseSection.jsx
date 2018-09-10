@@ -6,11 +6,14 @@ import radium from 'radium';
 import {
   Field,
   change,
+  formValueSelector,
 } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MAIN_FORM } from '../shared/form';
 import TextArea from './Form/TextArea.jsx';
+
+const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
@@ -74,12 +77,14 @@ const styles = {
 
 type Props = {
   changeField: Function,
+  baseLength: number,
 }
 
 class BaseSection extends PureComponent<Props> {
   render() {
     const {
       changeField,
+      baseLength,
     } = this.props;
 
     return (
@@ -89,7 +94,9 @@ class BaseSection extends PureComponent<Props> {
           placeholder="大底号码"
           component={TextArea} />
         <div style={styles.btnWrapper}>
-          <span style={styles.numberText}>0注</span>
+          <span style={styles.numberText}>
+            {`${baseLength}注`}
+          </span>
           <div style={styles.buttonsWrapper}>
             <button
               type="button"
@@ -113,8 +120,8 @@ class BaseSection extends PureComponent<Props> {
 }
 
 const reduxHook = connect(
-  () => ({
-
+  state => ({
+    baseLength: selector(state, 'base').split(/[\n(\r\n)]/).filter(t => t).length,
   }),
   dispatch => bindActionCreators({
     changeField: value => change(MAIN_FORM, 'base', value),
