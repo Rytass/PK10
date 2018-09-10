@@ -1,13 +1,12 @@
 import difference from 'lodash/difference';
-import { parseNumber } from './operator';
 
 function getTargetArray(num) {
   return [
-    parseNumber(num.num[0]),
-    parseNumber(num.num[1]),
-    parseNumber(num.num[2]),
-    parseNumber(num.num[3]),
-    parseNumber(num.num[4]),
+    num.num[0],
+    num.num[1],
+    num.num[2],
+    num.num[3],
+    num.num[4],
   ];
 }
 
@@ -21,7 +20,7 @@ export function bigTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.bigTypeZero) {
         return (
-          getTargetArray(num).filter(target => target > 5).length === 0
+          getTargetArray(num).filter(target => target.match(/[67890]/)).length === 0
         );
       }
 
@@ -30,7 +29,7 @@ export function bigTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.bigTypeOne) {
         return (
-          getTargetArray(num).filter(target => target > 5).length === 1
+          getTargetArray(num).filter(target => target.match(/[67890]/)).length === 1
         );
       }
 
@@ -39,7 +38,7 @@ export function bigTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.bigTypeTwo) {
         return (
-          getTargetArray(num).filter(target => target > 5).length === 2
+          getTargetArray(num).filter(target => target.match(/[67890]/)).length === 2
         );
       }
 
@@ -48,7 +47,7 @@ export function bigTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.bigTypeThree) {
         return (
-          getTargetArray(num).filter(target => target > 5).length === 3
+          getTargetArray(num).filter(target => target.match(/[67890]/)).length === 3
         );
       }
 
@@ -57,7 +56,7 @@ export function bigTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.bigTypeFour) {
         return (
-          getTargetArray(num).filter(target => target > 5).length === 4
+          getTargetArray(num).filter(target => target.match(/[67890]/)).length === 4
         );
       }
 
@@ -66,7 +65,7 @@ export function bigTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.bigTypeFive) {
         return (
-          getTargetArray(num).filter(target => target > 5).length === 5
+          getTargetArray(num).filter(target => target.match(/[67890]/)).length === 5
         );
       }
 
@@ -89,7 +88,7 @@ export function oddTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.oddTypeZero) {
         return (
-          getTargetArray(num).filter(target => target % 2 === 1).length === 0
+          getTargetArray(num).filter(target => target.match(/[13579]/)).length === 0
         );
       }
 
@@ -98,7 +97,7 @@ export function oddTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.oddTypeOne) {
         return (
-          getTargetArray(num).filter(target => target % 2 === 1).length === 1
+          getTargetArray(num).filter(target => target.match(/[13579]/)).length === 1
         );
       }
 
@@ -107,7 +106,7 @@ export function oddTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.oddTypeTwo) {
         return (
-          getTargetArray(num).filter(target => target % 2 === 1).length === 2
+          getTargetArray(num).filter(target => target.match(/[13579]/)).length === 2
         );
       }
 
@@ -116,7 +115,7 @@ export function oddTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.oddTypeThree) {
         return (
-          getTargetArray(num).filter(target => target % 2 === 1).length === 3
+          getTargetArray(num).filter(target => target.match(/[13579]/)).length === 3
         );
       }
 
@@ -125,7 +124,7 @@ export function oddTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.oddTypeFour) {
         return (
-          getTargetArray(num).filter(target => target % 2 === 1).length === 4
+          getTargetArray(num).filter(target => target.match(/[13579]/)).length === 4
         );
       }
 
@@ -134,7 +133,75 @@ export function oddTypeKeeper(numbers, options) {
     ...numbers.filter((num) => {
       if (options.oddTypeFive) {
         return (
-          getTargetArray(num).filter(target => target % 2 === 1).length === 5
+          getTargetArray(num).filter(target => target.match(/[13579]/)).length === 5
+        );
+      }
+
+      return false;
+    }),
+  ];
+
+  difference(numbers, result).forEach(num => num.killFailed());
+
+  return numbers;
+}
+
+export function primeTypeKeeper(numbers, options) {
+  const composed = Object.entries(options)
+    .filter(entry => entry[0].match(/primeType/) && entry[1] === true);
+
+  if (!composed.length) return numbers;
+
+  const result = [
+    ...numbers.filter((num) => {
+      if (options.primeTypeZero) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[12357]/)).length === 0
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.primeTypeOne) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[12357]/)).length === 1
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.primeTypeTwo) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[12357]/)).length === 2
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.primeTypeThree) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[12357]/)).length === 3
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.primeTypeFour) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[12357]/)).length === 4
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.primeTypeFive) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[12357]/)).length === 5
         );
       }
 

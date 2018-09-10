@@ -11,6 +11,7 @@ import { primeCompositeKiller } from '../helper/primeCompositeKiller';
 import {
   bigTypeKeeper,
   oddTypeKeeper,
+  primeTypeKeeper,
 } from '../helper/typeKeeper';
 
 export const FILTER_ACTIONS = [
@@ -24,6 +25,7 @@ export const FILTER_ACTIONS = [
   primeCompositeKiller,
   bigTypeKeeper,
   oddTypeKeeper,
+  primeTypeKeeper,
 ];
 
 export default {
