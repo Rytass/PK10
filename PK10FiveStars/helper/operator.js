@@ -9,4 +9,10 @@ export function transNumber(number) {
   return resultNum;
 }
 
+export function parseNumber(num) {
+  if (num === '0') return 10;
+
+  return Number(num);
+}
+
 export default { transNumber };

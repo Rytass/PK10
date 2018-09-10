@@ -78,30 +78,30 @@ type Props = {
 }
 
 class CrossTailSection extends PureComponent<Props> {
-  crossAllValue() {
+  acrossAllValue() {
     const {
       changeField,
     } = this.props;
 
-    changeField('crossFour', true);
-    changeField('crossFive', true);
-    changeField('crossSix', true);
-    changeField('crossSeven', true);
-    changeField('crossEight', true);
-    changeField('crossNine', true);
+    changeField('acrossFour', true);
+    changeField('acrossFive', true);
+    changeField('acrossSix', true);
+    changeField('acrossSeven', true);
+    changeField('acrossEight', true);
+    changeField('acrossNine', true);
   }
 
-  crossClearValue() {
+  acrossClearValue() {
     const {
       changeField,
     } = this.props;
 
-    changeField('crossFour', false);
-    changeField('crossFive', false);
-    changeField('crossSix', false);
-    changeField('crossSeven', false);
-    changeField('crossEight', false);
-    changeField('crossNine', false);
+    changeField('acrossFour', false);
+    changeField('acrossFive', false);
+    changeField('acrossSix', false);
+    changeField('acrossSeven', false);
+    changeField('acrossEight', false);
+    changeField('acrossNine', false);
   }
 
   tailAllValue() {
@@ -148,46 +148,46 @@ class CrossTailSection extends PureComponent<Props> {
           <div style={styles.button} />
           <div style={styles.button} />
           <Field
-            name="crossFour"
+            name="acrossFour"
             text="4"
             buttonstyle={styles.button}
             component={BooleanButton} />
           <Field
-            name="crossFive"
+            name="acrossFive"
             text="5"
             buttonstyle={styles.button}
             component={BooleanButton} />
           <Field
-            name="crossSix"
+            name="acrossSix"
             text="6"
             buttonstyle={styles.button}
             component={BooleanButton} />
           <Field
-            name="crossSeven"
+            name="acrossSeven"
             text="7"
             buttonstyle={styles.button}
             component={BooleanButton} />
           <Field
-            name="crossEight"
+            name="acrossEight"
             text="8"
             buttonstyle={styles.button}
             component={BooleanButton} />
           <Field
-            name="crossNine"
+            name="acrossNine"
             text="9"
             buttonstyle={styles.button}
             component={BooleanButton} />
           <button
             type="button"
-            key="crossAll"
-            onClick={() => this.crossAllValue()}
+            key="acrossAll"
+            onClick={() => this.acrossAllValue()}
             style={styles.allBtn}>
             全
           </button>
           <button
             type="button"
-            key="crossClear"
-            onClick={() => this.crossClearValue()}
+            key="acrossClear"
+            onClick={() => this.acrossClearValue()}
             style={styles.clearBtn}>
             清
           </button>

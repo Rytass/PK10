@@ -163,122 +163,122 @@ class KeepCrossFitSection extends PureComponent<Props> {
               <span style={styles.title}>【二码跨保留】</span>
               <div style={styles.button} />
               <Field
-                name="keepTwoCrossOne"
+                name="keepTwoAcrossOne"
                 text="1"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossTwo"
+                name="keepTwoAcrossTwo"
                 text="2"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossThree"
+                name="keepTwoAcrossThree"
                 text="3"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossFour"
+                name="keepTwoAcrossFour"
                 text="4"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossFive"
+                name="keepTwoAcrossFive"
                 text="5"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossSix"
+                name="keepTwoAcrossSix"
                 text="6"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossSeven"
+                name="keepTwoAcrossSeven"
                 text="7"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossEight"
+                name="keepTwoAcrossEight"
                 text="8"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNine"
+                name="keepTwoAcrossNine"
                 text="9"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <button
                 type="button"
-                key="keepTwoCrossAll"
-                onClick={() => this.allValue('keepTwoCross')}
+                key="keepTwoAcrossAll"
+                onClick={() => this.allValue('keepTwoAcross')}
                 style={styles.allBtn}>
                 全
               </button>
               <button
                 type="button"
-                key="keepTwoCrossClear"
-                onClick={() => this.clearValue('keepTwoCross')}
+                key="keepTwoAcrossClear"
+                onClick={() => this.clearValue('keepTwoAcross')}
                 style={styles.clearBtn}>
                 清
               </button>
               <Field
-                name="keepTwoCrossNumberZero"
+                name="keepTwoAcrossNumberZero"
                 text="0"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberOne"
+                name="keepTwoAcrossNumberOne"
                 text="1"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberTwo"
+                name="keepTwoAcrossNumberTwo"
                 text="2"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberThree"
+                name="keepTwoAcrossNumberThree"
                 text="3"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberFour"
+                name="keepTwoAcrossNumberFour"
                 text="4"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberFive"
+                name="keepTwoAcrossNumberFive"
                 text="5"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberSix"
+                name="keepTwoAcrossNumberSix"
                 text="6"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberSeven"
+                name="keepTwoAcrossNumberSeven"
                 text="7"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberEight"
+                name="keepTwoAcrossNumberEight"
                 text="8"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberNine"
+                name="keepTwoAcrossNumberNine"
                 text="9"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
-                name="keepTwoCrossNumberTen"
+                name="keepTwoAcrossNumberTen"
                 text="10"
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <div style={styles.countWeightWrapper}>
                 <Field
-                  name="keepTwoCrossCountWeight"
+                  name="keepTwoAcrossCountWeight"
                   label="计重"
                   component={CheckBox} />
               </div>
