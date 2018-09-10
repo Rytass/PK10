@@ -9,6 +9,7 @@ import { bigSmallKiller } from '../helper/bigSmallKiller';
 import { oddEvenKiller } from '../helper/oddEvenKiller';
 import { primeCompositeKiller } from '../helper/primeCompositeKiller';
 import { twoSetKiller } from '../helper/twoSetKiller';
+import { twoSetKeeper } from '../helper/twoSetKeeper';
 import { sumKiller } from '../helper/sumKiller';
 import {
   bigTypeKeeper,
@@ -29,6 +30,7 @@ export const FILTER_ACTIONS = [
   oddEvenKiller,
   primeCompositeKiller,
   twoSetKiller,
+  twoSetKeeper,
   sumKiller,
   bigTypeKeeper,
   oddTypeKeeper,
