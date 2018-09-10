@@ -13,6 +13,7 @@ import {
   oddTypeKeeper,
   primeTypeKeeper,
   zeroLoadTypeKeeper,
+  oneLoadTypeKeeper,
 } from '../helper/typeKeeper';
 
 export const FILTER_ACTIONS = [
@@ -28,6 +29,7 @@ export const FILTER_ACTIONS = [
   oddTypeKeeper,
   primeTypeKeeper,
   zeroLoadTypeKeeper,
+  oneLoadTypeKeeper,
 ];
 
 export default {

@@ -263,3 +263,62 @@ export function zeroLoadTypeKeeper(numbers, options) {
 
   return numbers;
 }
+
+export function oneLoadTypeKeeper(numbers, options) {
+  const composed = Object.entries(options)
+    .filter(entry => entry[0].match(/oneLoadType/) && entry[1] === true);
+
+  if (!composed.length) return numbers;
+
+  const result = [
+    ...numbers.filter((num) => {
+      if (options.oneLoadTypeZero) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[1470]/)).length === 0
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oneLoadTypeOne) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[1470]/)).length === 1
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oneLoadTypeTwo) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[1470]/)).length === 2
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oneLoadTypeThree) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[1470]/)).length === 3
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oneLoadTypeFour) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[1470]/)).length === 4
+        );
+      }
+
+      return false;
+    }),
+  ];
+
+  difference(numbers, result).forEach(num => num.killFailed());
+
+  return numbers;
+}
