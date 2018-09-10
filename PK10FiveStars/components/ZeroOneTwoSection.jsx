@@ -108,7 +108,7 @@ class ZeroOneTwoSection extends PureComponent<Props> {
     } = this.state;
 
     if (tenThousands && thousands && hundreds && tens && ones) {
-      const targetNumber = `${tenThousands}${thousands}${hundreds}${tens}${ones} `;
+      const targetNumber = ` ${tenThousands}${thousands}${hundreds}${tens}${ones} `;
 
       changeField(`${zeroOneTwo}${targetNumber}`);
     } else {
