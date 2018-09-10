@@ -79,4 +79,70 @@ export function bigTypeKeeper(numbers, options) {
   return numbers;
 }
 
-export default { bigTypeKeeper };
+export function oddTypeKeeper(numbers, options) {
+  const composed = Object.entries(options)
+    .filter(entry => entry[0].match(/oddType/) && entry[1] === true);
+
+  if (!composed.length) return numbers;
+
+  const result = [
+    ...numbers.filter((num) => {
+      if (options.oddTypeZero) {
+        return (
+          getTargetArray(num).filter(target => target % 2 === 1).length === 0
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oddTypeOne) {
+        return (
+          getTargetArray(num).filter(target => target % 2 === 1).length === 1
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oddTypeTwo) {
+        return (
+          getTargetArray(num).filter(target => target % 2 === 1).length === 2
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oddTypeThree) {
+        return (
+          getTargetArray(num).filter(target => target % 2 === 1).length === 3
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oddTypeFour) {
+        return (
+          getTargetArray(num).filter(target => target % 2 === 1).length === 4
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.oddTypeFive) {
+        return (
+          getTargetArray(num).filter(target => target % 2 === 1).length === 5
+        );
+      }
+
+      return false;
+    }),
+  ];
+
+  difference(numbers, result).forEach(num => num.killFailed());
+
+  return numbers;
+}

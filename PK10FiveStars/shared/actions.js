@@ -10,6 +10,7 @@ import { oddEvenKiller } from '../helper/oddEvenKiller';
 import { primeCompositeKiller } from '../helper/primeCompositeKiller';
 import {
   bigTypeKeeper,
+  oddTypeKeeper,
 } from '../helper/typeKeeper';
 
 export const FILTER_ACTIONS = [
@@ -22,6 +23,7 @@ export const FILTER_ACTIONS = [
   oddEvenKiller,
   primeCompositeKiller,
   bigTypeKeeper,
+  oddTypeKeeper,
 ];
 
 export default {
