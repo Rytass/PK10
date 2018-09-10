@@ -35,7 +35,7 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    margin: '0 150px 0 0',
+    margin: '0 170px 0 0',
   },
   lineWrapper: {
     alignSelf: 'stretch',

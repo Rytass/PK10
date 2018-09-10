@@ -43,6 +43,25 @@ const styles = {
   activedBtn: {
     backgroundColor: '#62f442',
   },
+  clearButton: {
+    height: 21,
+    fontSize: 12,
+    letterSpacing: 1,
+    color: '#4a4a4a',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: '1px solid #4a4a4a',
+    margin: '0 8px',
+    padding: '0 6px',
+    ':hover': {
+      opacity: 0.8,
+    },
+    ':active': {
+      boxShadow: '0 1px #666',
+      transform: 'translateY(1px)',
+    },
+  },
 };
 
 type Props = {
@@ -206,7 +225,7 @@ class BileSetFieldArray extends PureComponent {
         <button
           type="button"
           key="clear"
-          style={styles.button}
+          style={styles.clearButton}
           onClick={() => this.clearNumber()}>
           清
         </button>

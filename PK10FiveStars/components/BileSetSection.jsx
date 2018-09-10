@@ -6,7 +6,7 @@ import {
   Field,
 } from 'redux-form';
 import radium from 'radium';
-import NumberTextInput from './Form/NumberTextInput';
+import BooleanButton from './Form/BooleanButton';
 import BileSetFieldArray from './Form/BileSetFieldArray';
 import BileSetNumberSection from './Elements/BileSetNumberSection';
 
@@ -17,7 +17,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    padding: '10px 8px 8px 8px',
+    padding: '10px 8px 6px 8px',
     margin: '4px 8px',
     border: '1px solid #4a4a4a',
   },
@@ -34,12 +34,22 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    margin: '0 224px 0 0',
+    margin: '0 195px 0 0',
   },
   title: {
     fontSize: 14,
     color: '#4a4a4a',
     letterSpacing: 1,
+  },
+  failTitle: {
+    fontSize: 14,
+    color: '#4a4a4a',
+    letterSpacing: 1,
+    margin: '0 4px 0 0',
+  },
+  button: {
+    width: 25,
+    margin: '0 1px',
   },
   lineWrapper: {
     display: 'flex',
@@ -62,14 +72,32 @@ class BileSetSection extends PureComponent<Props> {
         <div style={styles.titleWrapper}>
           <span style={styles.title}>【胆码组】</span>
           <div style={styles.failWrapper}>
-            <span style={styles.title}>容错级别</span>
+            <span style={styles.failTitle}>容错级别</span>
             <Field
-              name="bileFailFrom"
-              component={NumberTextInput} />
-            <span style={styles.title}>至</span>
+              name="bileFaultZero"
+              text="0"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
             <Field
-              name="bileFailTo"
-              component={NumberTextInput} />
+              name="bileFaultOne"
+              text="1"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
+            <Field
+              name="bileFaultTwo"
+              text="2"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
+            <Field
+              name="bileFaultThree"
+              text="3"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
+            <Field
+              name="bileFaultFour"
+              text="4"
+              buttonstyle={styles.button}
+              component={BooleanButton} />
           </div>
         </div>
         <div style={styles.lineWrapper}>

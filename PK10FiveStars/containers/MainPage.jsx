@@ -37,17 +37,27 @@ const styles = {
     justifyContent: 'flex-start',
     position: 'relative',
   },
+  main: {
+    flex: 1,
+  },
   bigWrapper: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
-  sectionWrapper: {
+  leftSectionWrapper: {
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
+  },
+  sectionWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   boxSectionWrapper: {
     display: 'flex',
@@ -121,10 +131,10 @@ class MainPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
-        <div>
+        <div style={styles.main}>
           <KillChooseSection />
           <div style={styles.bigWrapper}>
-            <div style={styles.sectionWrapper}>
+            <div style={styles.leftSectionWrapper}>
               <PositionSection />
               <CrossTailSection />
               <MaxMinSection />

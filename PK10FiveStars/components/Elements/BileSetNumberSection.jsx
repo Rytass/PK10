@@ -18,7 +18,6 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    margin: '0 0 0 2px',
   },
   button: {
     height: 21,
