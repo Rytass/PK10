@@ -213,3 +213,53 @@ export function primeTypeKeeper(numbers, options) {
 
   return numbers;
 }
+
+export function zeroLoadTypeKeeper(numbers, options) {
+  const composed = Object.entries(options)
+    .filter(entry => entry[0].match(/zeroLoadType/) && entry[1] === true);
+
+  if (!composed.length) return numbers;
+
+  const result = [
+    ...numbers.filter((num) => {
+      if (options.zeroLoadTypeZero) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[369]/)).length === 0
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.zeroLoadTypeOne) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[369]/)).length === 1
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.zeroLoadTypeTwo) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[369]/)).length === 2
+        );
+      }
+
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.zeroLoadTypeThree) {
+        return (
+          getTargetArray(num).filter(target => target.match(/[369]/)).length === 3
+        );
+      }
+
+      return false;
+    }),
+  ];
+
+  difference(numbers, result).forEach(num => num.killFailed());
+
+  return numbers;
+}
