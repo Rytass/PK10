@@ -2,7 +2,7 @@ import { parseNumber } from './operator';
 
 export function hillKiller(numbers, options) {
   const composed = Object.entries(options)
-    .filter(entry => entry[0].match(/hill/) && entry[1] === true);
+    .filter(entry => entry[0].match(/hill|convex|concave/) && entry[1] === true);
 
   if (!composed.length) return numbers;
 
@@ -31,6 +31,46 @@ export function hillKiller(numbers, options) {
             && parseNumber(num.num[2]) >= parseNumber(num.num[3])
             && parseNumber(num.num[3]) >= parseNumber(num.num[4])
             && parseNumber(num.num[0]) > parseNumber(num.num[4])
+          ) {
+            num.killFailed();
+          }
+        });
+        break;
+      }
+
+      case 'convex': {
+        numbers.forEach((num) => {
+          if (
+            (
+              parseNumber(num.num[1]) > parseNumber(num.num[0])
+              && parseNumber(num.num[1]) < parseNumber(num.num[2])
+              && parseNumber(num.num[3]) > parseNumber(num.num[4])
+            )
+            || (
+              parseNumber(num.num[1]) > parseNumber(num.num[0])
+              && parseNumber(num.num[2]) > parseNumber(num.num[3])
+              && parseNumber(num.num[3]) > parseNumber(num.num[4])
+            )
+          ) {
+            num.killFailed();
+          }
+        });
+        break;
+      }
+
+      case 'concave': {
+        numbers.forEach((num) => {
+          if (
+            (
+              parseNumber(num.num[1]) < parseNumber(num.num[0])
+              && parseNumber(num.num[1]) > parseNumber(num.num[2])
+              && parseNumber(num.num[3]) < parseNumber(num.num[4])
+            )
+            || (
+              parseNumber(num.num[1]) < parseNumber(num.num[0])
+              && parseNumber(num.num[2]) < parseNumber(num.num[3])
+              && parseNumber(num.num[3]) < parseNumber(num.num[4])
+            )
           ) {
             num.killFailed();
           }
