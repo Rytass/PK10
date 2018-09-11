@@ -7,6 +7,7 @@ import {
   maxKeeper,
   minKeeper,
 } from '../helper/maxMinKeeper';
+import { bileKiller } from '../helper/bileKiller';
 import { bigSmallKiller } from '../helper/bigSmallKiller';
 import { oddEvenKiller } from '../helper/oddEvenKiller';
 import { primeCompositeKiller } from '../helper/primeCompositeKiller';
@@ -35,6 +36,7 @@ export const FILTER_ACTIONS = [
   tailKiller,
   maxKeeper,
   minKeeper,
+  bileKiller,
   bigSmallKiller,
   oddEvenKiller,
   primeCompositeKiller,

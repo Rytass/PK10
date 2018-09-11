@@ -217,9 +217,9 @@ class BileSetFieldArray extends PureComponent {
           key="10"
           style={[
             styles.button,
-            ~bileSet.findIndex(num => num === 0) && styles.activedBtn,
+            ~bileSet.findIndex(num => num === 10) && styles.activedBtn,
           ]}
-          onClick={() => this.toggleNumber(0)}>
+          onClick={() => this.toggleNumber(10)}>
           10
         </button>
         <button
