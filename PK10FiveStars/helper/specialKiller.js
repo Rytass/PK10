@@ -97,15 +97,15 @@ export function continuousKiller(numbers, options) {
       case 'noContinuous': {
         numbers.forEach((num) => {
           if (
-            !(~num.num.indexOf('1') && ~num.num.indexOf('2') && num.num.indexOf('1') !== num.num.indexOf('2'))
-            && !(~num.num.indexOf('2') && ~num.num.indexOf('3') && num.num.indexOf('2') !== num.num.indexOf('3'))
-            && !(~num.num.indexOf('3') && ~num.num.indexOf('4') && num.num.indexOf('3') !== num.num.indexOf('4'))
-            && !(~num.num.indexOf('4') && ~num.num.indexOf('5') && num.num.indexOf('4') !== num.num.indexOf('5'))
-            && !(~num.num.indexOf('5') && ~num.num.indexOf('6') && num.num.indexOf('5') !== num.num.indexOf('6'))
-            && !(~num.num.indexOf('6') && ~num.num.indexOf('7') && num.num.indexOf('6') !== num.num.indexOf('7'))
-            && !(~num.num.indexOf('7') && ~num.num.indexOf('8') && num.num.indexOf('7') !== num.num.indexOf('8'))
-            && !(~num.num.indexOf('8') && ~num.num.indexOf('9') && num.num.indexOf('8') !== num.num.indexOf('9'))
-            && !(~num.num.indexOf('9') && ~num.num.indexOf('0') && num.num.indexOf('9') !== num.num.indexOf('0'))
+            !(~num.num.indexOf('1') && ~num.num.indexOf('2'))
+            && !(~num.num.indexOf('2') && ~num.num.indexOf('3'))
+            && !(~num.num.indexOf('3') && ~num.num.indexOf('4'))
+            && !(~num.num.indexOf('4') && ~num.num.indexOf('5'))
+            && !(~num.num.indexOf('5') && ~num.num.indexOf('6'))
+            && !(~num.num.indexOf('6') && ~num.num.indexOf('7'))
+            && !(~num.num.indexOf('7') && ~num.num.indexOf('8'))
+            && !(~num.num.indexOf('8') && ~num.num.indexOf('9'))
+            && !(~num.num.indexOf('9') && ~num.num.indexOf('0'))
           ) {
             num.killFailed();
           }
@@ -120,62 +120,53 @@ export function continuousKiller(numbers, options) {
               ~num.num.indexOf('1')
               && ~num.num.indexOf('2')
               && !~num.num.indexOf('3')
-              && num.num.indexOf('1') !== num.num.indexOf('2')
             )
             || (
               !~num.num.indexOf('1')
               && ~num.num.indexOf('2')
               && ~num.num.indexOf('3')
               && !~num.num.indexOf('4')
-              && num.num.indexOf('2') !== num.num.indexOf('3')
             )
             || (
               !~num.num.indexOf('2')
               && ~num.num.indexOf('3')
               && ~num.num.indexOf('4')
               && !~num.num.indexOf('5')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
             )
             || (
               !~num.num.indexOf('3')
               && ~num.num.indexOf('4')
               && ~num.num.indexOf('5')
               && !~num.num.indexOf('6')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
             )
             || (
               !~num.num.indexOf('4')
               && ~num.num.indexOf('5')
               && ~num.num.indexOf('6')
               && !~num.num.indexOf('7')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
             )
             || (
               !~num.num.indexOf('5')
               && ~num.num.indexOf('6')
               && ~num.num.indexOf('7')
               && !~num.num.indexOf('8')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
             )
             || (
               !~num.num.indexOf('6')
               && ~num.num.indexOf('7')
               && ~num.num.indexOf('8')
               && !~num.num.indexOf('9')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
             )
             || (
               !~num.num.indexOf('7')
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && !~num.num.indexOf('0')
-              && num.num.indexOf('8') !== num.num.indexOf('9')
             )
             || (
               !~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && ~num.num.indexOf('0')
-              && num.num.indexOf('9') !== num.num.indexOf('0')
             ))
             && !(
               (
@@ -183,8 +174,6 @@ export function continuousKiller(numbers, options) {
                 && ~num.num.indexOf('2')
                 && ~num.num.indexOf('3')
                 && !~num.num.indexOf('4')
-                && num.num.indexOf('1') !== num.num.indexOf('2')
-                && num.num.indexOf('2') !== num.num.indexOf('3')
               )
               || (
                 !~num.num.indexOf('1')
@@ -192,8 +181,6 @@ export function continuousKiller(numbers, options) {
                 && ~num.num.indexOf('3')
                 && ~num.num.indexOf('4')
                 && !~num.num.indexOf('5')
-                && num.num.indexOf('2') !== num.num.indexOf('3')
-                && num.num.indexOf('3') !== num.num.indexOf('4')
               )
               || (
                 !~num.num.indexOf('2')
@@ -201,8 +188,6 @@ export function continuousKiller(numbers, options) {
                 && ~num.num.indexOf('4')
                 && ~num.num.indexOf('5')
                 && !~num.num.indexOf('6')
-                && num.num.indexOf('3') !== num.num.indexOf('4')
-                && num.num.indexOf('4') !== num.num.indexOf('5')
               )
               || (
                 !~num.num.indexOf('3')
@@ -210,8 +195,6 @@ export function continuousKiller(numbers, options) {
                 && ~num.num.indexOf('5')
                 && ~num.num.indexOf('6')
                 && !~num.num.indexOf('7')
-                && num.num.indexOf('4') !== num.num.indexOf('5')
-                && num.num.indexOf('5') !== num.num.indexOf('6')
               )
               || (
                 !~num.num.indexOf('4')
@@ -219,8 +202,6 @@ export function continuousKiller(numbers, options) {
                 && ~num.num.indexOf('6')
                 && ~num.num.indexOf('7')
                 && !~num.num.indexOf('8')
-                && num.num.indexOf('5') !== num.num.indexOf('6')
-                && num.num.indexOf('6') !== num.num.indexOf('7')
               )
               || (
                 !~num.num.indexOf('5')
@@ -228,8 +209,6 @@ export function continuousKiller(numbers, options) {
                 && ~num.num.indexOf('7')
                 && ~num.num.indexOf('8')
                 && !~num.num.indexOf('9')
-                && num.num.indexOf('6') !== num.num.indexOf('7')
-                && num.num.indexOf('7') !== num.num.indexOf('8')
               )
               || (
                 !~num.num.indexOf('6')
@@ -237,16 +216,12 @@ export function continuousKiller(numbers, options) {
                 && ~num.num.indexOf('8')
                 && ~num.num.indexOf('9')
                 && !~num.num.indexOf('0')
-                && num.num.indexOf('7') !== num.num.indexOf('8')
-                && num.num.indexOf('8') !== num.num.indexOf('9')
               )
               || (
                 !~num.num.indexOf('7')
                 && ~num.num.indexOf('8')
                 && ~num.num.indexOf('9')
                 && ~num.num.indexOf('0')
-                && num.num.indexOf('8') !== num.num.indexOf('9')
-                && num.num.indexOf('9') !== num.num.indexOf('0')
               )
             )) {
             num.killFailed();
@@ -263,8 +238,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('2')
               && ~num.num.indexOf('3')
               && !~num.num.indexOf('4')
-              && num.num.indexOf('1') !== num.num.indexOf('2')
-              && num.num.indexOf('2') !== num.num.indexOf('3')
             )
             || (
               !~num.num.indexOf('1')
@@ -272,8 +245,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('3')
               && ~num.num.indexOf('4')
               && !~num.num.indexOf('5')
-              && num.num.indexOf('2') !== num.num.indexOf('3')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
             )
             || (
               !~num.num.indexOf('2')
@@ -281,8 +252,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('4')
               && ~num.num.indexOf('5')
               && !~num.num.indexOf('6')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
             )
             || (
               !~num.num.indexOf('3')
@@ -290,8 +259,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('5')
               && ~num.num.indexOf('6')
               && !~num.num.indexOf('7')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
             )
             || (
               !~num.num.indexOf('4')
@@ -299,8 +266,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('6')
               && ~num.num.indexOf('7')
               && !~num.num.indexOf('8')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
             )
             || (
               !~num.num.indexOf('5')
@@ -308,8 +273,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('7')
               && ~num.num.indexOf('8')
               && !~num.num.indexOf('9')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
             )
             || (
               !~num.num.indexOf('6')
@@ -317,16 +280,12 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && !~num.num.indexOf('0')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
-              && num.num.indexOf('8') !== num.num.indexOf('9')
             )
             || (
               !~num.num.indexOf('7')
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && ~num.num.indexOf('0')
-              && num.num.indexOf('8') !== num.num.indexOf('9')
-              && num.num.indexOf('9') !== num.num.indexOf('0')
             )
           ) {
             num.killFailed();
@@ -344,9 +303,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('3')
               && ~num.num.indexOf('4')
               && !~num.num.indexOf('5')
-              && num.num.indexOf('1') !== num.num.indexOf('2')
-              && num.num.indexOf('2') !== num.num.indexOf('3')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
             )
             || (
               !~num.num.indexOf('1')
@@ -355,9 +311,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('4')
               && ~num.num.indexOf('5')
               && !~num.num.indexOf('6')
-              && num.num.indexOf('2') !== num.num.indexOf('3')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
             )
             || (
               !~num.num.indexOf('2')
@@ -366,9 +319,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('5')
               && ~num.num.indexOf('6')
               && !~num.num.indexOf('7')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
             )
             || (
               !~num.num.indexOf('3')
@@ -377,9 +327,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('6')
               && ~num.num.indexOf('7')
               && !~num.num.indexOf('8')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
             )
             || (
               !~num.num.indexOf('4')
@@ -388,9 +335,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('7')
               && ~num.num.indexOf('8')
               && !~num.num.indexOf('9')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
             )
             || (
               !~num.num.indexOf('5')
@@ -399,9 +343,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && !~num.num.indexOf('0')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
-              && num.num.indexOf('8') !== num.num.indexOf('9')
             )
             || (
               !~num.num.indexOf('6')
@@ -409,9 +350,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && ~num.num.indexOf('0')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
-              && num.num.indexOf('8') !== num.num.indexOf('9')
-              && num.num.indexOf('9') !== num.num.indexOf('0')
             )
           ) {
             num.killFailed();
@@ -429,10 +367,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('3')
               && ~num.num.indexOf('4')
               && ~num.num.indexOf('5')
-              && num.num.indexOf('1') !== num.num.indexOf('2')
-              && num.num.indexOf('2') !== num.num.indexOf('3')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
             )
             || (
               ~num.num.indexOf('2')
@@ -440,10 +374,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('4')
               && ~num.num.indexOf('5')
               && ~num.num.indexOf('6')
-              && num.num.indexOf('2') !== num.num.indexOf('3')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
             )
             || (
               ~num.num.indexOf('3')
@@ -451,10 +381,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('5')
               && ~num.num.indexOf('6')
               && ~num.num.indexOf('7')
-              && num.num.indexOf('3') !== num.num.indexOf('4')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
             )
             || (
               ~num.num.indexOf('4')
@@ -462,10 +388,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('6')
               && ~num.num.indexOf('7')
               && ~num.num.indexOf('8')
-              && num.num.indexOf('4') !== num.num.indexOf('5')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
             )
             || (
               ~num.num.indexOf('5')
@@ -473,10 +395,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('7')
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
-              && num.num.indexOf('5') !== num.num.indexOf('6')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
-              && num.num.indexOf('8') !== num.num.indexOf('9')
             )
             || (
               ~num.num.indexOf('6')
@@ -484,10 +402,6 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && ~num.num.indexOf('0')
-              && num.num.indexOf('6') !== num.num.indexOf('7')
-              && num.num.indexOf('7') !== num.num.indexOf('8')
-              && num.num.indexOf('8') !== num.num.indexOf('9')
-              && num.num.indexOf('9') !== num.num.indexOf('0')
             )
           ) {
             num.killFailed();
