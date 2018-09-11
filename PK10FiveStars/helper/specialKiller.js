@@ -219,17 +219,7 @@ export function continuousKiller(numbers, options) {
         numbers.forEach((num) => {
           if (
             (
-              !~num.num.indexOf('9')
-              && ~num.num.indexOf('0')
-              && ~num.num.indexOf('1')
-              && ~num.num.indexOf('2')
-              && !~num.num.indexOf('3')
-              && num.num.indexOf('0') !== num.num.indexOf('1')
-              && num.num.indexOf('1') !== num.num.indexOf('2')
-            )
-            || (
-              !~num.num.indexOf('0')
-              && ~num.num.indexOf('1')
+              ~num.num.indexOf('1')
               && ~num.num.indexOf('2')
               && ~num.num.indexOf('3')
               && !~num.num.indexOf('4')
@@ -295,18 +285,8 @@ export function continuousKiller(numbers, options) {
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')
               && ~num.num.indexOf('0')
-              && !~num.num.indexOf('1')
               && num.num.indexOf('8') !== num.num.indexOf('9')
               && num.num.indexOf('9') !== num.num.indexOf('0')
-            )
-            || (
-              !~num.num.indexOf('8')
-              && ~num.num.indexOf('9')
-              && ~num.num.indexOf('0')
-              && ~num.num.indexOf('1')
-              && !~num.num.indexOf('2')
-              && num.num.indexOf('9') !== num.num.indexOf('0')
-              && num.num.indexOf('0') !== num.num.indexOf('1')
             )
           ) {
             num.killFailed();
