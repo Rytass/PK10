@@ -62,6 +62,11 @@ function parseTwoAcrossSet(numbers, set, count, isCountWeight) {
           || (count[3] ? countLength === 3 : false)
           || (count[4] ? countLength === 4 : false)
           || (count[5] ? countLength === 5 : false)
+          || (count[6] ? countLength === 6 : false)
+          || (count[7] ? countLength === 7 : false)
+          || (count[8] ? countLength === 8 : false)
+          || (count[9] ? countLength === 9 : false)
+          || (count[10] ? countLength === 10 : false)
         );
       }
 
@@ -85,6 +90,11 @@ function parseTwoAcrossSet(numbers, set, count, isCountWeight) {
         || (count[3] ? countLength === 3 : false)
         || (count[4] ? countLength === 4 : false)
         || (count[5] ? countLength === 5 : false)
+        || (count[6] ? countLength === 6 : false)
+        || (count[7] ? countLength === 7 : false)
+        || (count[8] ? countLength === 8 : false)
+        || (count[9] ? countLength === 9 : false)
+        || (count[10] ? countLength === 10 : false)
       );
     }
 
