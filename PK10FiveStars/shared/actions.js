@@ -21,6 +21,7 @@ import {
   twoAcrossKeeper,
   twoFitKeeper,
   threeFitKeeper,
+  fourFitKeeper,
 } from '../helper/acrossFitKeeper';
 import { zeroOneTwoKiller } from '../helper/zeroOneTwoKiller';
 import { sumKiller } from '../helper/sumKiller';
@@ -52,6 +53,7 @@ export const FILTER_ACTIONS = [
   twoAcrossKeeper,
   twoFitKeeper,
   threeFitKeeper,
+  fourFitKeeper,
   zeroOneTwoKiller,
   sumKiller,
   bigTypeKeeper,

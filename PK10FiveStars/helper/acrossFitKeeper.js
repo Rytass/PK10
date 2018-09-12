@@ -339,6 +339,103 @@ function parseThreeFitSet(numbers, set, count, isCountWeight) {
   return result;
 }
 
+function parseFourFitSet(numbers, set, count, isCountWeight) {
+  if (!set.length) {
+    return numbers;
+  }
+
+  const result = numbers.filter((num) => {
+    const firstIndex = set.findIndex(fit => (
+      fit === (
+        parseNumber(num.num[0])
+        + parseNumber(num.num[1])
+        + parseNumber(num.num[2])
+        + parseNumber(num.num[3])
+      ) % 10
+    ));
+    const secondIndex = set.findIndex(fit => (
+      fit === (
+        parseNumber(num.num[0])
+        + parseNumber(num.num[1])
+        + parseNumber(num.num[2])
+        + parseNumber(num.num[4])
+      ) % 10
+    ));
+    const thirdIndex = set.findIndex(fit => (
+      fit === (
+        parseNumber(num.num[0])
+        + parseNumber(num.num[1])
+        + parseNumber(num.num[3])
+        + parseNumber(num.num[4])
+      ) % 10
+    ));
+    const fourthIndex = set.findIndex(fit => (
+      fit === (
+        parseNumber(num.num[0])
+        + parseNumber(num.num[2])
+        + parseNumber(num.num[3])
+        + parseNumber(num.num[4])
+      ) % 10
+    ));
+    const fifthIndex = set.findIndex(fit => (
+      fit === (
+        parseNumber(num.num[1])
+        + parseNumber(num.num[2])
+        + parseNumber(num.num[3])
+        + parseNumber(num.num[4])
+      ) % 10
+    ));
+
+    if (count.find(c => c)) {
+      if (isCountWeight) {
+        const countLength = [
+          !!~firstIndex,
+          !!~secondIndex,
+          !!~thirdIndex,
+          !!~fourthIndex,
+          !!~fifthIndex,
+        ].filter(index => index).length;
+
+        return (
+          (count[0] ? countLength === 0 : false)
+          || (count[1] ? countLength === 1 : false)
+          || (count[2] ? countLength === 2 : false)
+          || (count[3] ? countLength === 3 : false)
+          || (count[4] ? countLength === 4 : false)
+          || (count[5] ? countLength === 5 : false)
+        );
+      }
+
+      const countLength = uniq([
+        firstIndex,
+        secondIndex,
+        thirdIndex,
+        fourthIndex,
+        fifthIndex,
+      ].filter(index => index >= 0)).length;
+
+      return (
+        (count[0] ? countLength === 0 : false)
+        || (count[1] ? countLength === 1 : false)
+        || (count[2] ? countLength === 2 : false)
+        || (count[3] ? countLength === 3 : false)
+        || (count[4] ? countLength === 4 : false)
+        || (count[5] ? countLength === 5 : false)
+      );
+    }
+
+    return (
+      ~firstIndex
+      || ~secondIndex
+      || ~thirdIndex
+      || ~fourthIndex
+      || ~fifthIndex
+    );
+  });
+
+  return result;
+}
+
 function getCount(condition, options) {
   switch (condition) {
     case 'keepTwoAcrossSet':
@@ -473,6 +570,26 @@ export function threeFitKeeper(numbers, options) {
   return numbers;
 }
 
-export function fourFitKeeper() {
+export function fourFitKeeper(numbers, options) {
+  const composed = Object.entries(options)
+    .filter(entry => entry[0].match(/keepFourFitSet/) && entry[1].length)
+    .map(([condition, value]) => {
+      const count = getCount(condition, options);
 
+      return parseFourFitSet(numbers, value, count, options.keepFourFitCountWeight);
+    });
+
+  if (!composed.length) return numbers;
+
+  const [
+    fourFitSet,
+  ] = composed;
+
+  const result = intersection(
+    (fourFitSet || numbers),
+  );
+
+  difference(numbers, result).forEach(num => num.killFailed());
+
+  return numbers;
 }
