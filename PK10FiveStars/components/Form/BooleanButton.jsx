@@ -67,7 +67,7 @@ class BooleanButton extends PureComponent {
           ]}
           onClick={() => {
             if (noToggle) {
-              alert('选择的胆码个数不对！个数不能大于已选择的胆码数量');
+              alert('选择的个数不对！个数不能大于已选择的数量');
             } else {
               onChange(!value);
             }

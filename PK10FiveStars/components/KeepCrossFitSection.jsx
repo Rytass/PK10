@@ -4,13 +4,18 @@ import React, { PureComponent } from 'react';
 import radium from 'radium';
 import {
   Field,
+  FieldArray,
   change,
+  formValueSelector,
 } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MAIN_FORM } from '../shared/form';
 import BooleanButton from './Form/BooleanButton';
 import CheckBox from './Form/CheckBox';
+import KeepCrossFitFieldArray from './Form/KeepCrossFitFieldArray';
+
+const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
@@ -95,6 +100,10 @@ const styles = {
 
 type Props = {
   changeField: Function,
+  keepTwoAcrossSetLength: number,
+  keepTwoFitSetLength: numbe,
+  keepThreeFitSetLength: numbe,
+  keepFourFitSetLength: numbe,
 }
 
 class KeepCrossFitSection extends PureComponent<Props> {
@@ -103,16 +112,7 @@ class KeepCrossFitSection extends PureComponent<Props> {
       changeField,
     } = this.props;
 
-    changeField(`${type}Zero`, true);
-    changeField(`${type}One`, true);
-    changeField(`${type}Two`, true);
-    changeField(`${type}Three`, true);
-    changeField(`${type}Four`, true);
-    changeField(`${type}Five`, true);
-    changeField(`${type}Six`, true);
-    changeField(`${type}Seven`, true);
-    changeField(`${type}Eight`, true);
-    changeField(`${type}Nine`, true);
+    changeField(`${type}Set`, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
     changeField(`${type}NumberZero`, true);
     changeField(`${type}NumberOne`, true);
     changeField(`${type}NumberTwo`, true);
@@ -131,16 +131,7 @@ class KeepCrossFitSection extends PureComponent<Props> {
       changeField,
     } = this.props;
 
-    changeField(`${type}Zero`, false);
-    changeField(`${type}One`, false);
-    changeField(`${type}Two`, false);
-    changeField(`${type}Three`, false);
-    changeField(`${type}Four`, false);
-    changeField(`${type}Five`, false);
-    changeField(`${type}Six`, false);
-    changeField(`${type}Seven`, false);
-    changeField(`${type}Eight`, false);
-    changeField(`${type}Nine`, false);
+    changeField(`${type}Set`, []);
     changeField(`${type}NumberZero`, false);
     changeField(`${type}NumberOne`, false);
     changeField(`${type}NumberTwo`, false);
@@ -155,58 +146,23 @@ class KeepCrossFitSection extends PureComponent<Props> {
   }
 
   render() {
+    const {
+      keepTwoAcrossSetLength,
+      keepTwoFitSetLength,
+      keepThreeFitSetLength,
+      keepFourFitSetLength,
+    } = this.props;
+
     return (
       <div style={styles.wrapper}>
         <div style={styles.main}>
           <div style={styles.fieldWrapper}>
             <div style={styles.lineWrapper}>
               <span style={styles.title}>【二码跨保留】</span>
-              <div style={styles.button} />
-              <Field
-                name="keepTwoAcrossOne"
-                text="1"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossTwo"
-                text="2"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossThree"
-                text="3"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossFour"
-                text="4"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossFive"
-                text="5"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossSix"
-                text="6"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossSeven"
-                text="7"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossEight"
-                text="8"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoAcrossNine"
-                text="9"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
+              <FieldArray
+                name="keepTwoAcrossSet"
+                noZero
+                component={KeepCrossFitFieldArray} />
               <button
                 type="button"
                 key="keepTwoAcrossAll"
@@ -229,51 +185,61 @@ class KeepCrossFitSection extends PureComponent<Props> {
               <Field
                 name="keepTwoAcrossNumberOne"
                 text="1"
+                noToggle={keepTwoAcrossSetLength < 1}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberTwo"
                 text="2"
+                noToggle={keepTwoAcrossSetLength < 2}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberThree"
                 text="3"
+                noToggle={keepTwoAcrossSetLength < 3}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberFour"
                 text="4"
+                noToggle={keepTwoAcrossSetLength < 4}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberFive"
                 text="5"
+                noToggle={keepTwoAcrossSetLength < 5}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberSix"
                 text="6"
+                noToggle={keepTwoAcrossSetLength < 6}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberSeven"
                 text="7"
+                noToggle={keepTwoAcrossSetLength < 7}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberEight"
                 text="8"
+                noToggle={keepTwoAcrossSetLength < 8}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberNine"
                 text="9"
+                noToggle={keepTwoAcrossSetLength < 9}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoAcrossNumberTen"
                 text="10"
+                noToggle={keepTwoAcrossSetLength < 10}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <div style={styles.countWeightWrapper}>
@@ -285,56 +251,9 @@ class KeepCrossFitSection extends PureComponent<Props> {
             </div>
             <div style={styles.lineWrapper}>
               <span style={styles.title}>【二码合保留】</span>
-              <Field
-                name="keepTwoFitZero"
-                text="0"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitOne"
-                text="1"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitTwo"
-                text="2"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitThree"
-                text="3"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitFour"
-                text="4"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitFive"
-                text="5"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitSix"
-                text="6"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitSeven"
-                text="7"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitEight"
-                text="8"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepTwoFitNine"
-                text="9"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
+              <FieldArray
+                name="keepTwoFitSet"
+                component={KeepCrossFitFieldArray} />
               <button
                 type="button"
                 key="keepTwoFitAll"
@@ -357,51 +276,61 @@ class KeepCrossFitSection extends PureComponent<Props> {
               <Field
                 name="keepTwoFitNumberOne"
                 text="1"
+                noToggle={keepTwoFitSetLength < 1}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberTwo"
                 text="2"
+                noToggle={keepTwoFitSetLength < 2}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberThree"
                 text="3"
+                noToggle={keepTwoFitSetLength < 3}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberFour"
                 text="4"
+                noToggle={keepTwoFitSetLength < 4}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberFive"
                 text="5"
+                noToggle={keepTwoFitSetLength < 5}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberSix"
                 text="6"
+                noToggle={keepTwoFitSetLength < 6}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberSeven"
                 text="7"
+                noToggle={keepTwoFitSetLength < 7}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberEight"
                 text="8"
+                noToggle={keepTwoFitSetLength < 8}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberNine"
                 text="9"
+                noToggle={keepTwoFitSetLength < 9}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepTwoFitNumberTen"
                 text="10"
+                noToggle={keepTwoFitSetLength < 10}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <div style={styles.countWeightWrapper}>
@@ -413,56 +342,9 @@ class KeepCrossFitSection extends PureComponent<Props> {
             </div>
             <div style={styles.lineWrapper}>
               <span style={styles.title}>【三码合保留】</span>
-              <Field
-                name="keepThreeFitZero"
-                text="0"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitOne"
-                text="1"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitTwo"
-                text="2"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitThree"
-                text="3"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitFour"
-                text="4"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitFive"
-                text="5"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitSix"
-                text="6"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitSeven"
-                text="7"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitEight"
-                text="8"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepThreeFitNine"
-                text="9"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
+              <FieldArray
+                name="keepThreeFitSet"
+                component={KeepCrossFitFieldArray} />
               <button
                 type="button"
                 key="keepThreeFitAll"
@@ -485,51 +367,61 @@ class KeepCrossFitSection extends PureComponent<Props> {
               <Field
                 name="keepThreeFitNumberOne"
                 text="1"
+                noToggle={keepThreeFitSetLength < 1}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberTwo"
                 text="2"
+                noToggle={keepThreeFitSetLength < 2}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberThree"
                 text="3"
+                noToggle={keepThreeFitSetLength < 3}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberFour"
                 text="4"
+                noToggle={keepThreeFitSetLength < 4}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberFive"
                 text="5"
+                noToggle={keepThreeFitSetLength < 5}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberSix"
                 text="6"
+                noToggle={keepThreeFitSetLength < 6}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberSeven"
                 text="7"
+                noToggle={keepThreeFitSetLength < 7}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberEight"
                 text="8"
+                noToggle={keepThreeFitSetLength < 8}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberNine"
                 text="9"
+                noToggle={keepThreeFitSetLength < 9}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepThreeFitNumberTen"
                 text="10"
+                noToggle={keepThreeFitSetLength < 10}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <div style={styles.countWeightWrapper}>
@@ -541,56 +433,9 @@ class KeepCrossFitSection extends PureComponent<Props> {
             </div>
             <div style={styles.lineWrapper}>
               <span style={styles.title}>【四码合保留】</span>
-              <Field
-                name="keepFourFitZero"
-                text="0"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitOne"
-                text="1"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitTwo"
-                text="2"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitThree"
-                text="3"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitFour"
-                text="4"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitFive"
-                text="5"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitSix"
-                text="6"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitSeven"
-                text="7"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitEight"
-                text="8"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
-              <Field
-                name="keepFourFitNine"
-                text="9"
-                buttonstyle={styles.button}
-                component={BooleanButton} />
+              <FieldArray
+                name="keepFourFitSet"
+                component={KeepCrossFitFieldArray} />
               <button
                 type="button"
                 key="keepFourFitAll"
@@ -613,26 +458,31 @@ class KeepCrossFitSection extends PureComponent<Props> {
               <Field
                 name="keepFourFitNumberOne"
                 text="1"
+                noToggle={keepFourFitSetLength < 1}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepFourFitNumberTwo"
                 text="2"
+                noToggle={keepFourFitSetLength < 2}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepFourFitNumberThree"
                 text="3"
+                noToggle={keepFourFitSetLength < 3}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepFourFitNumberFour"
                 text="4"
+                noToggle={keepFourFitSetLength < 4}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <Field
                 name="keepFourFitNumberFive"
                 text="5"
+                noToggle={keepFourFitSetLength < 5}
                 buttonstyle={styles.button}
                 component={BooleanButton} />
               <div style={styles.button} />
@@ -655,8 +505,11 @@ class KeepCrossFitSection extends PureComponent<Props> {
 }
 
 const reduxHook = connect(
-  () => ({
-
+  state => ({
+    keepTwoAcrossSetLength: selector(state, 'keepTwoAcrossSet').length,
+    keepTwoFitSetLength: selector(state, 'keepTwoFitSet').length,
+    keepThreeFitSetLength: selector(state, 'keepThreeFitSet').length,
+    keepFourFitSetLength: selector(state, 'keepFourFitSet').length,
   }),
   dispatch => bindActionCreators({
     changeField: (field, value) => change(MAIN_FORM, field, value),
