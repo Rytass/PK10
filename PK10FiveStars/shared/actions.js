@@ -19,6 +19,7 @@ import { twoSetKiller } from '../helper/twoSetKiller';
 import { twoSetKeeper } from '../helper/twoSetKeeper';
 import {
   twoAcrossKeeper,
+  twoFitKeeper,
 } from '../helper/acrossFitKeeper';
 import { zeroOneTwoKiller } from '../helper/zeroOneTwoKiller';
 import { sumKiller } from '../helper/sumKiller';
@@ -48,6 +49,7 @@ export const FILTER_ACTIONS = [
   twoSetKiller,
   twoSetKeeper,
   twoAcrossKeeper,
+  twoFitKeeper,
   zeroOneTwoKiller,
   sumKiller,
   bigTypeKeeper,
