@@ -4,6 +4,10 @@
   "description": "PK10",
   "main": "./PK10FiveStars/main.js",
   "scripts": {
+    "build": "npm run build:PK10FiveStars",
+    "build:copyConfig:PK10FiveStars": "cp -r ./PK10FiveStars/static/* ./PK10FiveStars/dist && cp ./PK10FiveStars/production/* ./PK10FiveStars/dist",
+    "build:makeBinary:PK10FiveStars": "electron-builder build -mw --x64 --ia32 -c build.json --project ./PK10FiveStars/dist",
+    "build:PK10FiveStars": "webpack --config ./PK10FiveStars/webpack.config.js -p --optimize-minimize && npm run build:copyConfig:PK10FiveStars && npm run build:makeBinary:PK10FiveStars",
     "start": "electron -r @babel/register .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
