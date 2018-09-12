@@ -98,21 +98,35 @@ export function bileKiller(numbers, options) {
 
   if (!composed.length) return numbers;
 
-  const [
-    set1,
-    set2,
-    set3,
-    set4,
-  ] = composed;
+  composed.forEach(set => difference(numbers, set).forEach(num => num.bileFailed()));
 
-  const result = intersection(
-    (set1 || numbers),
-    (set2 || numbers),
-    (set3 || numbers),
-    (set4 || numbers),
-  );
+  numbers.forEach((num) => {
+    if (
+      !options.bileFaultZero
+      && !options.bileFaultOne
+      && !options.bileFaultTwo
+      && !options.bileFaultThree
+      && !options.bileFaultFour
+    ) {
+      if (!num.isBilePass(0)) {
+        num.killFailed();
+        return;
+      }
+      return;
+    }
 
-  difference(numbers, result).forEach(num => num.killFailed());
+    if (
+      !(
+        (options.bileFaultZero ? num.isBilePass(0) : false)
+        || (options.bileFaultOne ? num.isBilePass(1) : false)
+        || (options.bileFaultTwo ? num.isBilePass(2) : false)
+        || (options.bileFaultThree ? num.isBilePass(3) : false)
+        || (options.bileFaultFour ? num.isBilePass(4) : false)
+      )
+    ) {
+      num.killFailed();
+    }
+  });
 
   return numbers;
 }

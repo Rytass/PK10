@@ -2,6 +2,7 @@ export default class NumberCandidate {
   constructor(num) {
     this.num = num;
     this.failedCount = 0;
+    this.bileFailedCount = 0;
     this.killFailedCount = 0;
   }
 
@@ -15,6 +16,14 @@ export default class NumberCandidate {
 
   killFailed() {
     this.killFailedCount += 1;
+  }
+
+  bileFailed() {
+    this.bileFailedCount += 1;
+  }
+
+  isBilePass(limit = 0) {
+    return this.bileFailedCount === limit;
   }
 
   isPass(limit = 0) {
