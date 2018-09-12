@@ -227,6 +227,118 @@ function parseTwoFitSet(numbers, set, count, isCountWeight) {
   return result;
 }
 
+function parseThreeFitSet(numbers, set, count, isCountWeight) {
+  if (!set.length) {
+    return numbers;
+  }
+
+  const result = numbers.filter((num) => {
+    const firstIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[0]) + parseNumber(num.num[1]) + parseNumber(num.num[2])) % 10
+    ));
+    const secondIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[0]) + parseNumber(num.num[1]) + parseNumber(num.num[3])) % 10
+    ));
+    const thirdIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[0]) + parseNumber(num.num[1]) + parseNumber(num.num[4])) % 10
+    ));
+    const fourthIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[0]) + parseNumber(num.num[2]) + parseNumber(num.num[3])) % 10
+    ));
+    const fifthIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[0]) + parseNumber(num.num[2]) + parseNumber(num.num[4])) % 10
+    ));
+    const sixthIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[0]) + parseNumber(num.num[3]) + parseNumber(num.num[4])) % 10
+    ));
+    const seventhIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[1]) + parseNumber(num.num[2]) + parseNumber(num.num[3])) % 10
+    ));
+    const eighthIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[1]) + parseNumber(num.num[2]) + parseNumber(num.num[4])) % 10
+    ));
+    const ninthIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[1]) + parseNumber(num.num[3]) + parseNumber(num.num[4])) % 10
+    ));
+    const tenthIndex = set.findIndex(fit => (
+      fit === (parseNumber(num.num[2]) + parseNumber(num.num[3]) + parseNumber(num.num[4])) % 10
+    ));
+
+    if (count.find(c => c)) {
+      if (isCountWeight) {
+        const countLength = [
+          !!~firstIndex,
+          !!~secondIndex,
+          !!~thirdIndex,
+          !!~fourthIndex,
+          !!~fifthIndex,
+          !!~sixthIndex,
+          !!~seventhIndex,
+          !!~eighthIndex,
+          !!~ninthIndex,
+          !!~tenthIndex,
+        ].filter(index => index).length;
+
+        return (
+          (count[0] ? countLength === 0 : false)
+          || (count[1] ? countLength === 1 : false)
+          || (count[2] ? countLength === 2 : false)
+          || (count[3] ? countLength === 3 : false)
+          || (count[4] ? countLength === 4 : false)
+          || (count[5] ? countLength === 5 : false)
+          || (count[6] ? countLength === 6 : false)
+          || (count[7] ? countLength === 7 : false)
+          || (count[8] ? countLength === 8 : false)
+          || (count[9] ? countLength === 9 : false)
+          || (count[10] ? countLength === 10 : false)
+        );
+      }
+
+      const countLength = uniq([
+        firstIndex,
+        secondIndex,
+        thirdIndex,
+        fourthIndex,
+        fifthIndex,
+        sixthIndex,
+        seventhIndex,
+        eighthIndex,
+        ninthIndex,
+        tenthIndex,
+      ].filter(index => index >= 0)).length;
+
+      return (
+        (count[0] ? countLength === 0 : false)
+        || (count[1] ? countLength === 1 : false)
+        || (count[2] ? countLength === 2 : false)
+        || (count[3] ? countLength === 3 : false)
+        || (count[4] ? countLength === 4 : false)
+        || (count[5] ? countLength === 5 : false)
+        || (count[6] ? countLength === 6 : false)
+        || (count[7] ? countLength === 7 : false)
+        || (count[8] ? countLength === 8 : false)
+        || (count[9] ? countLength === 9 : false)
+        || (count[10] ? countLength === 10 : false)
+      );
+    }
+
+    return (
+      ~firstIndex
+      || ~secondIndex
+      || ~thirdIndex
+      || ~fourthIndex
+      || ~fifthIndex
+      || ~sixthIndex
+      || ~seventhIndex
+      || ~eighthIndex
+      || ~ninthIndex
+      || ~tenthIndex
+    );
+  });
+
+  return result;
+}
+
 function getCount(condition, options) {
   switch (condition) {
     case 'keepTwoAcrossSet':
@@ -337,8 +449,28 @@ export function twoFitKeeper(numbers, options) {
   return numbers;
 }
 
-export function threeFitKeeper() {
+export function threeFitKeeper(numbers, options) {
+  const composed = Object.entries(options)
+    .filter(entry => entry[0].match(/keepThreeFitSet/) && entry[1].length)
+    .map(([condition, value]) => {
+      const count = getCount(condition, options);
 
+      return parseThreeFitSet(numbers, value, count, options.keepThreeFitCountWeight);
+    });
+
+  if (!composed.length) return numbers;
+
+  const [
+    threeFitSet,
+  ] = composed;
+
+  const result = intersection(
+    (threeFitSet || numbers),
+  );
+
+  difference(numbers, result).forEach(num => num.killFailed());
+
+  return numbers;
 }
 
 export function fourFitKeeper() {
