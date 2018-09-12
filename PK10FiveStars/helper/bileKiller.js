@@ -1,4 +1,3 @@
-import intersection from 'lodash/intersection';
 import difference from 'lodash/difference';
 import uniq from 'lodash/uniq';
 import { parseNumber } from './operator';
