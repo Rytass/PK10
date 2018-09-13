@@ -1,2 +1,5 @@
 export const MAIN_FORM = 'FORM/MAIN';
-export const TWO_FORM = 'FORM/TWO';
+
+export default {
+  MAIN_FORM,
+};
