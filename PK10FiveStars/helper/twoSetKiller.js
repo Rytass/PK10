@@ -1,510 +1,420 @@
+import uniqBy from 'lodash/uniqBy';
+
 export function twoSetKiller(numbers, options) {
   const composed = Object.entries(options)
     .filter(entry => entry[0].match(/killTwoSet/) && entry[1] === true);
 
   if (!composed.length) return numbers;
 
-  composed.forEach(([condition]) => {
-    switch (condition) {
-      case 'killTwoSetOneTwo': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*2|2.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+  const result = [
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneTwo) {
+        return (
+          num.num.match(/1.*2|2.*1/)
+        );
       }
 
-      case 'killTwoSetOneThree': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*3|3.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneThree) {
+        return (
+          num.num.match(/1.*3|3.*1/)
+        );
       }
 
-      case 'killTwoSetOneFour': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*4|4.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneFour) {
+        return (
+          num.num.match(/1.*4|4.*1/)
+        );
       }
 
-      case 'killTwoSetOneFive': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*5|5.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneFive) {
+        return (
+          num.num.match(/1.*5|5.*1/)
+        );
       }
 
-      case 'killTwoSetOneSix': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*6|6.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneSix) {
+        return (
+          num.num.match(/1.*6|6.*1/)
+        );
       }
 
-      case 'killTwoSetOneSeven': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*7|7.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneSeven) {
+        return (
+          num.num.match(/1.*7|7.*1/)
+        );
       }
 
-      case 'killTwoSetOneEight': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*8|8.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneEight) {
+        return (
+          num.num.match(/1.*8|8.*1/)
+        );
       }
 
-      case 'killTwoSetOneNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*9|9.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneNine) {
+        return (
+          num.num.match(/1.*9|9.*1/)
+        );
       }
 
-      case 'killTwoSetOneTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/1.*0|0.*1/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetOneTen) {
+        return (
+          num.num.match(/1.*0|0.*1/)
+        );
       }
 
-      case 'killTwoSetTwoThree': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*3|3.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoThree) {
+        return (
+          num.num.match(/2.*3|3.*2/)
+        );
       }
 
-      case 'killTwoSetTwoFour': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*4|4.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoFour) {
+        return (
+          num.num.match(/2.*4|4.*2/)
+        );
       }
 
-      case 'killTwoSetTwoFive': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*5|5.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoFive) {
+        return (
+          num.num.match(/2.*5|5.*2/)
+        );
       }
 
-      case 'killTwoSetTwoSix': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*6|6.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoSix) {
+        return (
+          num.num.match(/2.*6|6.*2/)
+        );
       }
 
-      case 'killTwoSetTwoSeven': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*7|7.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoSeven) {
+        return (
+          num.num.match(/2.*7|7.*2/)
+        );
       }
 
-      case 'killTwoSetTwoEight': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*8|8.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoEight) {
+        return (
+          num.num.match(/2.*8|8.*2/)
+        );
       }
 
-      case 'killTwoSetTwoNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*9|9.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoNine) {
+        return (
+          num.num.match(/2.*9|9.*2/)
+        );
       }
 
-      case 'killTwoSetTwoTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/2.*0|0.*2/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetTwoTen) {
+        return (
+          num.num.match(/2.*0|0.*2/)
+        );
       }
 
-      case 'killTwoSetThreeFour': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/3.*4|4.*3/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetThreeFour) {
+        return (
+          num.num.match(/3.*4|4.*3/)
+        );
       }
 
-      case 'killTwoSetThreeFive': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/3.*5|5.*3/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetThreeFive) {
+        return (
+          num.num.match(/3.*5|5.*3/)
+        );
       }
 
-      case 'killTwoSetThreeSix': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/3.*6|6.*3/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetThreeSix) {
+        return (
+          num.num.match(/3.*6|6.*3/)
+        );
       }
 
-      case 'killTwoSetThreeSeven': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/3.*7|7.*3/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetThreeSeven) {
+        return (
+          num.num.match(/3.*7|7.*3/)
+        );
       }
 
-      case 'killTwoSetThreeEight': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/3.*8|8.*3/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetThreeEight) {
+        return (
+          num.num.match(/3.*8|8.*3/)
+        );
       }
 
-      case 'killTwoSetThreeNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/3.*9|9.*3/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetThreeNine) {
+        return (
+          num.num.match(/3.*9|9.*3/)
+        );
       }
 
-      case 'killTwoSetThreeTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/3.*0|0.*3/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetThreeTen) {
+        return (
+          num.num.match(/3.*0|0.*3/)
+        );
       }
 
-      case 'killTwoSetFourFive': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/4.*5|5.*4/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFourFive) {
+        return (
+          num.num.match(/4.*5|5.*4/)
+        );
       }
 
-      case 'killTwoSetFourSix': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/4.*6|6.*4/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFourSix) {
+        return (
+          num.num.match(/4.*6|6.*4/)
+        );
       }
 
-      case 'killTwoSetFourSeven': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/4.*7|7.*4/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFourSeven) {
+        return (
+          num.num.match(/4.*7|7.*4/)
+        );
       }
 
-      case 'killTwoSetFourEight': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/4.*8|8.*4/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFourEight) {
+        return (
+          num.num.match(/4.*8|8.*4/)
+        );
       }
 
-      case 'killTwoSetFourNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/4.*9|9.*4/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFourNine) {
+        return (
+          num.num.match(/4.*9|9.*4/)
+        );
       }
 
-      case 'killTwoSetFourTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/4.*0|0.*4/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFourTen) {
+        return (
+          num.num.match(/4.*0|0.*4/)
+        );
       }
 
-      case 'killTwoSetFiveSix': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/5.*6|6.*5/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFiveSix) {
+        return (
+          num.num.match(/5.*6|6.*5/)
+        );
       }
 
-      case 'killTwoSetFiveSeven': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/5.*7|7.*5/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFiveSeven) {
+        return (
+          num.num.match(/5.*7|7.*5/)
+        );
       }
 
-      case 'killTwoSetFiveEight': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/5.*8|8.*5/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFiveEight) {
+        return (
+          num.num.match(/5.*8|8.*5/)
+        );
       }
 
-      case 'killTwoSetFiveNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/5.*9|9.*5/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFiveNine) {
+        return (
+          num.num.match(/5.*9|9.*5/)
+        );
       }
 
-      case 'killTwoSetFiveTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/5.*0|0.*5/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetFiveTen) {
+        return (
+          num.num.match(/5.*0|0.*5/)
+        );
       }
 
-      case 'killTwoSetSixSeven': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/6.*7|7.*6/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetSixSeven) {
+        return (
+          num.num.match(/6.*7|7.*6/)
+        );
       }
 
-      case 'killTwoSetSixEight': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/6.*8|8.*6/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetSixEight) {
+        return (
+          num.num.match(/6.*8|8.*6/)
+        );
       }
 
-      case 'killTwoSetSixNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/6.*9|9.*6/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetSixNine) {
+        return (
+          num.num.match(/6.*9|9.*6/)
+        );
       }
 
-      case 'killTwoSetSixTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/6.*0|0.*6/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetSixTen) {
+        return (
+          num.num.match(/6.*0|0.*6/)
+        );
       }
 
-      case 'killTwoSetSevenEight': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/7.*8|8.*7/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetSevenEight) {
+        return (
+          num.num.match(/7.*8|8.*7/)
+        );
       }
 
-      case 'killTwoSetSevenNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/7.*9|9.*7/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetSevenNine) {
+        return (
+          num.num.match(/7.*9|9.*7/)
+        );
       }
 
-      case 'killTwoSetSevenTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/7.*0|0.*7/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetSevenTen) {
+        return (
+          num.num.match(/7.*0|0.*7/)
+        );
       }
 
-      case 'killTwoSetEightNine': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/8.*9|9.*8/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetEightNine) {
+        return (
+          num.num.match(/8.*9|9.*8/)
+        );
       }
 
-      case 'killTwoSetEightTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/8.*0|0.*8/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetEightTen) {
+        return (
+          num.num.match(/8.*0|0.*8/)
+        );
       }
 
-      case 'killTwoSetNineTen': {
-        numbers.forEach((num) => {
-          if (
-            num.num.match(/9.*0|0.*9/)
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
+      return false;
+    }),
+    ...numbers.filter((num) => {
+      if (options.killTwoSetNineTen) {
+        return (
+          num.num.match(/9.*0|0.*9/)
+        );
       }
 
-      default:
-        break;
-    }
-  });
+      return false;
+    }),
+  ];
+
+  uniqBy(result, 'num').forEach(num => num.killFailed());
 
   return numbers;
 }
