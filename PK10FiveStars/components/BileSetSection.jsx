@@ -12,13 +12,14 @@ import BileSetNumberSection from './Elements/BileSetNumberSection';
 
 const styles = {
   wrapper: {
+    flex: 1,
     display: 'flex',
     alignSelf: 'stretch',
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     padding: '10px 8px 6px 8px',
-    margin: '4px 8px',
+    margin: '4px 8px 0 8px',
     border: '1px solid #4a4a4a',
   },
   titleWrapper: {
@@ -27,7 +28,7 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    margin: '0 0 8px 0',
+    margin: '0 0 12px 0',
   },
   failWrapper: {
     display: 'flex',

@@ -22,6 +22,7 @@ const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
+    height: 700,
     padding: 8,
     width: '100%',
     display: 'flex',
@@ -39,6 +40,7 @@ const styles = {
     justifyContent: 'space-between',
   },
   resultWrapper: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

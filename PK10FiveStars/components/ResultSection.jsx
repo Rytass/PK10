@@ -26,6 +26,7 @@ const styles = {
     height: '100%',
     display: 'flex',
     alignSelf: 'stretch',
+    flex: 3,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',

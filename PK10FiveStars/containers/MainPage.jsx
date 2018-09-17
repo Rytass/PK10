@@ -29,6 +29,7 @@ const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
+    height: 700,
     padding: 8,
     width: '100%',
     display: 'flex',
@@ -39,8 +40,15 @@ const styles = {
   },
   main: {
     flex: 1,
+    alignSelf: 'stretch',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
   },
   bigWrapper: {
+    flex: 1,
+    alignSelf: 'stretch',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
@@ -49,12 +57,14 @@ const styles = {
   leftSectionWrapper: {
     flex: 1,
     display: 'flex',
+    alignSelf: 'stretch',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
   sectionWrapper: {
     display: 'flex',
+    alignSelf: 'stretch',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -66,6 +76,7 @@ const styles = {
     justifyContent: 'flex-start',
   },
   resultWrapper: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
