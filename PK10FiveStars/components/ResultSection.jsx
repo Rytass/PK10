@@ -2,6 +2,7 @@
 
 import React, { PureComponent } from 'react';
 import radium from 'radium';
+import { clipboard } from 'electron';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -10,8 +11,10 @@ import {
   change,
   formValueSelector,
 } from 'redux-form';
+import { transNumber } from '../helper/operator';
 import ResultArea from './ResultArea';
 import NumberTextInput from './Form/NumberTextInput';
+import { NO_RESULT } from '../shared/message.js';
 import { INIT_FORM_VALUE } from '../shared/initValue';
 import { MAIN_FORM } from '../shared/form';
 
@@ -75,6 +78,27 @@ const styles = {
       transform: 'translateY(1px)',
     },
   },
+  copyBtn: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    fontSize: 18,
+    letterSpacing: 1,
+    backgroundColor: '#ffc430',
+    color: '#4a4a4a',
+    border: '1px solid #4a4a4a',
+    margin: '2px 0',
+    textDecoration: 'none',
+    ':hover': {
+      opacity: 0.8,
+    },
+    ':active': {
+      boxShadow: '0 1px #666',
+      transform: 'translateY(1px)',
+    },
+  },
   clearBtn: {
     width: '100%',
     display: 'flex',
@@ -107,6 +131,20 @@ type Props = {
 }
 
 class ResultSection extends PureComponent<Props> {
+  copy() {
+    const {
+      resultNumber,
+    } = this.props;
+
+    if (!resultNumber.length || resultNumber[0] === NO_RESULT) {
+      alert('最终注数为0注，请检查您输入的条件');
+      return;
+    }
+
+    clipboard.writeText(resultNumber.map(num => transNumber(num.num)).join('\n'));
+    alert('号码已复制');
+  }
+
   render() {
     const {
       resultNumber,
@@ -133,6 +171,13 @@ class ResultSection extends PureComponent<Props> {
             key="submit"
             style={styles.submitBtn}>
             开始缩水
+          </button>
+          <button
+            type="button"
+            key="copy"
+            onClick={() => this.copy()}
+            style={styles.copyBtn}>
+            复制结果
           </button>
           <button
             type="button"

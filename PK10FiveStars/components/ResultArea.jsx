@@ -12,7 +12,7 @@ const styles = {
   textAreaWrapper: {
     display: 'block',
     width: '100%',
-    height: 300,
+    height: 265,
     overflow: 'auto',
     backgroundColor: '#fff',
     border: '1px solid #d2d2d2',
@@ -76,7 +76,7 @@ class ResultArea extends PureComponent<Props> {
     };
 
     this.onContextMenu = () => {
-      ipcRenderer.send('CLIPBOARD_CACHE', this.props.resultNumber.map(num => transNumber(num.num)).join(' '));
+      ipcRenderer.send('CLIPBOARD_CACHE', this.props.resultNumber.map(num => transNumber(num.num)).join('\n'));
     };
   }
 
