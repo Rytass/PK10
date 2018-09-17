@@ -91,7 +91,7 @@ class BaseSection extends PureComponent<Props> {
       <div style={styles.wrapper}>
         <Field
           name="base"
-          placeholder="大底号码"
+          placeholder="大底号码，双击清空"
           component={TextArea} />
         <div style={styles.btnWrapper}>
           <span style={styles.numberText}>

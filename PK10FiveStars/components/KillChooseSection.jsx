@@ -81,7 +81,7 @@ class KillChooseSection extends PureComponent<Props> {
       <div style={styles.wrapper}>
         <Field
           name="killChoose"
-          placeholder="杀直选大底"
+          placeholder="杀直选大底，双击清空"
           component={TextArea} />
         <div style={styles.btnWrapper}>
           <span style={styles.numberText}>
