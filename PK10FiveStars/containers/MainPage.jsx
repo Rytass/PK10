@@ -63,6 +63,7 @@ const styles = {
     justifyContent: 'flex-start',
   },
   sectionWrapper: {
+    flex: 1,
     display: 'flex',
     alignSelf: 'stretch',
     flexDirection: 'column',
@@ -70,10 +71,11 @@ const styles = {
     justifyContent: 'space-between',
   },
   boxSectionWrapper: {
+    alignSelf: 'stretch',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
   },
   resultWrapper: {
     height: '100%',

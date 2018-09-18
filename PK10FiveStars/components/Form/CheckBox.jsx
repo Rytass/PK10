@@ -11,10 +11,9 @@ const styles = {
     margin: '2px 0',
   },
   label: {
-    fontSize: 13,
-    letterSpacing: 1,
+    fontSize: 11,
     color: '#4a4a4a',
-    margin: '0 0 0 3px',
+    margin: '0 0 0 1px',
   },
 };
 

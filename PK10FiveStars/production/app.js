@@ -13,7 +13,7 @@ let mainWindow;
 
 app.on('ready', () => {
   const config = {
-    width: 1460,
+    width: 1320,
     height: 800,
   };
 
@@ -24,6 +24,8 @@ app.on('ready', () => {
     protocol: 'file:',
     slashes: true,
   }));
+
+  mainWindow.setAutoHideMenuBar(true);
 
   mainWindow.on('closed', () => {
     mainWindow = null;

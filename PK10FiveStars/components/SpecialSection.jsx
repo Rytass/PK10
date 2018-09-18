@@ -20,12 +20,11 @@ const styles = {
     justifyContent: 'space-between',
     padding: '12px 8px 8px 8px',
     border: '1px solid #4a4a4a',
-    margin: '0 8px 0 8px',
+    margin: '0 4px',
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#4a4a4a',
-    letterSpacing: 1,
   },
   clearBtn: {
     border: '1px solid #4a4a4a',

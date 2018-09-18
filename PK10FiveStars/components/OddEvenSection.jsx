@@ -13,13 +13,14 @@ import CheckBox from './Form/CheckBox';
 
 const styles = {
   wrapper: {
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: '12px 8px 8px 8px',
     border: '1px solid #4a4a4a',
-    margin: '4px 8px 8px 8px',
+    margin: '4px 4px 0 4px',
   },
   titleLine: {
     display: 'flex',
@@ -49,7 +50,7 @@ const styles = {
   },
   clearBtn: {
     border: '1px solid #4a4a4a',
-    padding: '0 16px',
+    padding: '0 8px',
     backgroundColor: '#f2f2f2',
     fontSize: 13,
     letterSpacing: 1,
@@ -65,7 +66,7 @@ const styles = {
   },
   allBtn: {
     border: '1px solid #4a4a4a',
-    padding: '0 16px',
+    padding: '0 8px',
     backgroundColor: '#f2f2f2',
     fontSize: 13,
     letterSpacing: 1,

@@ -53,7 +53,7 @@ const styles = {
     margin: '0 1px',
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#4a4a4a',
     letterSpacing: 1,
     margin: '0 12px 0 0',
