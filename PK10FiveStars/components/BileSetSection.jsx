@@ -31,11 +31,12 @@ const styles = {
     margin: '0 0 12px 0',
   },
   failWrapper: {
+    flex: 1,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    margin: '0 195px 0 0',
+    margin: '0 0 0 20px',
   },
   title: {
     fontSize: 14,

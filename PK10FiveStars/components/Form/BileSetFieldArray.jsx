@@ -31,7 +31,7 @@ const styles = {
     justifyContent: 'center',
     border: '1px solid #4a4a4a',
     margin: '0 1px',
-    padding: '0 6px',
+    padding: '0 4px',
     ':hover': {
       opacity: 0.8,
     },

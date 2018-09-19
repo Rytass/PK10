@@ -31,11 +31,12 @@ const styles = {
     margin: '0 0 8px 0',
   },
   failWrapper: {
+    flex: 1,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    margin: '0 170px 0 0',
+    margin: '0 0 0 20px',
   },
   lineWrapper: {
     alignSelf: 'stretch',

@@ -55,7 +55,6 @@ const styles = {
     justifyContent: 'flex-start',
   },
   leftSectionWrapper: {
-    flex: 1,
     display: 'flex',
     alignSelf: 'stretch',
     flexDirection: 'column',
@@ -63,6 +62,7 @@ const styles = {
     justifyContent: 'flex-start',
   },
   sectionWrapper: {
+    minWidth: 550,
     flex: 1,
     display: 'flex',
     alignSelf: 'stretch',
