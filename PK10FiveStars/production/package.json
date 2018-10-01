@@ -1,7 +1,7 @@
 {
-  "name": "pk10",
+  "name": "pk10FiveStars",
   "version": "1.0.5",
-  "description": "PK10",
+  "description": "PK10FiveStars",
   "main": "app.js",
   "repository": {
     "type": "git",
