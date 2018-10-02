@@ -109,6 +109,22 @@ export const INIT_FORM_VALUE = {
   twoOfbileSet4: false,
   threeOfbileSet4: false,
   fourOfbileSet4: false,
+  bbbb: false,
+  bbsb: false,
+  bsbb: false,
+  bssb: false,
+  bbbs: false,
+  bbss: false,
+  bsbs: false,
+  bsss: false,
+  sbbb: false,
+  sbsb: false,
+  ssbb: false,
+  sssb: false,
+  sbbs: false,
+  sbss: false,
+  ssbs: false,
+  ssss: false,
 };
 
 export default {
