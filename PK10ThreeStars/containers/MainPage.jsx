@@ -17,6 +17,7 @@ import BileSetSection from '../components/BileSetSection';
 import KillSumSection from '../components/KillSumSection';
 import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
+import PrimeCompositeSection from '../components/PrimeCompositeSection';
 import SpecialSection from '../components/SpecialSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
@@ -157,6 +158,7 @@ class MainPage extends PureComponent<Props> {
               <KillSumSection />
               <BigSmallSection />
               <OddEvenSection />
+              <PrimeCompositeSection />
               <SpecialSection />
             </div>
           </div>
