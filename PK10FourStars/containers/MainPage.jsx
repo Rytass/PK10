@@ -13,6 +13,7 @@ import KillChooseSection from '../components/KillChooseSection';
 import PositionSection from '../components/PositionSection';
 import CrossTailSection from '../components/CrossTailSection';
 import MaxMinSection from '../components/MaxMinSection';
+import BileSetSection from '../components/BileSetSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
@@ -146,6 +147,7 @@ class MainPage extends PureComponent<Props> {
               <PositionSection />
               <CrossTailSection />
               <MaxMinSection />
+              <BileSetSection />
             </div>
           </div>
         </div>
