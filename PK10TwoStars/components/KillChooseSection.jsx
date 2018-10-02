@@ -14,9 +14,9 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    padding: '4px 8px 0 8px',
+    padding: '8px 8px 0 8px',
     margin: '0 8px',
-    borderWidth: '0 1px 0 1px',
+    borderWidth: '1px 1px 0 1px',
     borderColor: '#4a4a4a',
     borderStyle: 'solid',
   },
@@ -37,20 +37,20 @@ const styles = {
   },
 };
 
-class BaseSection extends PureComponent {
+class KillChooseSection extends PureComponent {
   render() {
     return (
       <div style={styles.wrapper}>
         <div style={styles.titleWrapper}>
-          <span style={styles.title}>大底号码</span>
+          <span style={styles.title}>垃圾号码</span>
         </div>
         <Field
-          name="base"
-          placeholder="大底号码，双击清空"
+          name="killChoose"
+          placeholder="垃圾号码，双击清空"
           component={TextArea} />
       </div>
     );
   }
 }
 
-export default radium(BaseSection);
+export default radium(KillChooseSection);

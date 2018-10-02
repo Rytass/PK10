@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
+import KillChooseSection from '../components/KillChooseSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
 import { MAIN_FORM } from '../shared/form';
 import { NO_RESULT } from '../shared/message';
@@ -20,7 +21,7 @@ const selector = formValueSelector(MAIN_FORM);
 
 const styles = {
   wrapper: {
-    height: 700,
+    height: 750,
     padding: 8,
     width: '100%',
     display: 'flex',
@@ -136,8 +137,10 @@ class MainPage extends PureComponent<Props> {
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
         <div style={styles.resultWrapper}>
-          <ResultSection isRunning={!!runningOptions} />
+          <KillChooseSection />
           <BaseSection />
+          <ResultSection isRunning={!!runningOptions} />
+
         </div>
       </form>
     );
