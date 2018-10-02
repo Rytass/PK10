@@ -1,0 +1,6 @@
+{
+  "appId": "com.rytass.PK10FourStars",
+  "productName": "PK10 4星",
+  "copyright": "Rytass Corp.",
+  "win": { "target": [ "portable" ] }
+}

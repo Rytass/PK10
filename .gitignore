@@ -69,5 +69,8 @@ api/uploads/**/*
 
 # Dist
 PK10FiveStars/dist
+PK10FourStars/dist
+PK10ThreeStars/dist
+PK10TwoStars/dist
 
 .DS_Store
