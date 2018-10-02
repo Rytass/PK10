@@ -141,6 +141,22 @@ export const INIT_FORM_VALUE = {
   eoee: false,
   eeoe: false,
   eeee: false,
+  pppp: false,
+  ppcp: false,
+  pcpp: false,
+  pccp: false,
+  pppc: false,
+  ppcc: false,
+  pcpc: false,
+  pccc: false,
+  cppp: false,
+  cpcp: false,
+  ccpp: false,
+  cccp: false,
+  cppc: false,
+  cpcc: false,
+  ccpc: false,
+  cccc: false,
 };
 
 export default {

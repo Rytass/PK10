@@ -16,6 +16,7 @@ import MaxMinSection from '../components/MaxMinSection';
 import BileSetSection from '../components/BileSetSection';
 import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
+import PrimeCompositeSection from '../components/PrimeCompositeSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
@@ -155,6 +156,7 @@ class MainPage extends PureComponent<Props> {
               <div style={styles.boxSectionWrapper}>
                 <BigSmallSection />
                 <OddEvenSection />
+                <PrimeCompositeSection />
               </div>
             </div>
           </div>
