@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import radium from 'radium';
 
 const styles = {
   wrapper: {
@@ -15,6 +16,9 @@ const styles = {
     color: '#4a4a4a',
     margin: '0 0 0 1px',
   },
+  disabledText: {
+    color: '#9b9b9b',
+  },
 };
 
 type Props = {
@@ -27,6 +31,7 @@ type Props = {
   meta: {
     form: string,
   },
+  disabled: boolean,
 }
 
 class CheckBox extends PureComponent {
@@ -43,6 +48,7 @@ class CheckBox extends PureComponent {
       meta: {
         form,
       },
+      disabled,
     } = this.props;
 
     return (
@@ -51,10 +57,11 @@ class CheckBox extends PureComponent {
           id={`${form}:${name}`}
           checked={value}
           onChange={onChange}
+          disabled={disabled}
           type="checkbox" />
         <label
           htmlFor={`${form}:${name}`}
-          style={styles.label}>
+          style={[styles.label, disabled && styles.disabledText]}>
           {label}
         </label>
       </div>
@@ -62,4 +69,4 @@ class CheckBox extends PureComponent {
   }
 }
 
-export default CheckBox;
+export default radium(CheckBox);

@@ -18,6 +18,7 @@ import SpecialSection from '../components/SpecialSection';
 import BigSmallSection from '../components/BigSmallSection';
 import OddEvenSection from '../components/OddEvenSection';
 import PrimeCompositeSection from '../components/PrimeCompositeSection';
+import ZeroOneTwoSection from '../components/ZeroOneTwoSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
@@ -160,6 +161,7 @@ class MainPage extends PureComponent<Props> {
                 <OddEvenSection />
                 <PrimeCompositeSection />
               </div>
+              <ZeroOneTwoSection />
             </div>
           </div>
         </div>
