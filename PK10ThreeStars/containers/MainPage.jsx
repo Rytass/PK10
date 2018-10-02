@@ -12,6 +12,7 @@ import initNumberPool from '../helper/init';
 import KillChooseSection from '../components/KillChooseSection';
 import PositionSection from '../components/PositionSection';
 import CrossTailSection from '../components/CrossTailSection';
+import MaxMinSection from '../components/MaxMinSection';
 import BileSetSection from '../components/BileSetSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
@@ -145,9 +146,8 @@ class MainPage extends PureComponent<Props> {
             <div style={styles.leftSectionWrapper}>
               <PositionSection />
               <CrossTailSection />
-              {/* <MaxMinSection /> */}
+              <MaxMinSection />
               <BileSetSection />
-              {/* <SpecialSection /> */}
             </div>
             {/* <div style={styles.sectionWrapper}>
               <div style={styles.boxSectionWrapper}>
