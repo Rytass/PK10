@@ -4,6 +4,7 @@ export const INIT_FORM_VALUE = {
   failTo: 0,
   killChoose: '',
   base: '',
+  trash: '',
   firstOne: false,
   firstTwo: false,
   firstThree: false,

@@ -113,6 +113,7 @@ class TypeSection extends PureComponent<Props> {
     changeField(`${type}Zero`, false);
     changeField(`${type}One`, false);
     changeField(`${type}Two`, false);
+    changeField(`${type}Three`, false);
   }
 
   render() {
