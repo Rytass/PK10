@@ -35,20 +35,20 @@ function Header() {
         to="/main">
         主要模式
       </NavLink>
-      {/* <NavLink
+      <NavLink
         className="hover-btn"
         key="two"
         style={styles.link}
         to="/two">
-        杀/出二码组合/二码跨/二码合/三码合/四码合
+        杀/出二码组合/二码合跨
       </NavLink>
       <NavLink
         className="hover-btn"
         key="other"
         style={styles.link}
         to="/other">
-        杀012路/杀和值/型态个数
-      </NavLink> */}
+        杀垃圾复式/型态个数
+      </NavLink>
     </nav>
   );
 }
