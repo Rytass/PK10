@@ -125,6 +125,22 @@ export const INIT_FORM_VALUE = {
   sbss: false,
   ssbs: false,
   ssss: false,
+  oooo: false,
+  ooeo: false,
+  oeoo: false,
+  oeeo: false,
+  oooe: false,
+  ooee: false,
+  oeoe: false,
+  oeee: false,
+  eooo: false,
+  eoeo: false,
+  eeoo: false,
+  eeeo: false,
+  eooe: false,
+  eoee: false,
+  eeoe: false,
+  eeee: false,
 };
 
 export default {
