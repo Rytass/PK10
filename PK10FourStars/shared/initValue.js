@@ -49,6 +49,23 @@ export const INIT_FORM_VALUE = {
   positionFaultTwo: false,
   positionFaultThree: false,
   positionFaultFour: false,
+  acrossThree: false,
+  acrossFour: false,
+  acrossFive: false,
+  acrossSix: false,
+  acrossSeven: false,
+  acrossEight: false,
+  acrossNine: false,
+  tailZero: false,
+  tailOne: false,
+  tailTwo: false,
+  tailThree: false,
+  tailFour: false,
+  tailFive: false,
+  tailSix: false,
+  tailSeven: false,
+  tailEight: false,
+  tailNine: false,
 };
 
 export default {
