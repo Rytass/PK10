@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
 import PositionSection from '../components/PositionSection';
 import BileSetSection from '../components/BileSetSection';
+import CrossTailSection from '../components/CrossTailSection';
 import SpecialSection from '../components/SpecialSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
@@ -142,6 +143,7 @@ class MainPage extends PureComponent<Props> {
         <div style={styles.main}>
           <PositionSection />
           <BileSetSection />
+          <CrossTailSection />
           <SpecialSection />
         </div>
         <div style={styles.resultWrapper}>
