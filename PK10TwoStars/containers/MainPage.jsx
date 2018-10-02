@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import initNumberPool from '../helper/init';
+import PositionSection from '../components/PositionSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import KillChooseSection from '../components/KillChooseSection';
@@ -136,11 +137,13 @@ class MainPage extends PureComponent<Props> {
 
     return (
       <form style={styles.wrapper} onSubmit={handleSubmit(d => this.submit(d))}>
+        <div style={styles.main}>
+          <PositionSection />
+        </div>
         <div style={styles.resultWrapper}>
           <KillChooseSection />
           <BaseSection />
           <ResultSection isRunning={!!runningOptions} />
-
         </div>
       </form>
     );
