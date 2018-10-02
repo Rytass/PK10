@@ -24,6 +24,18 @@ export const INIT_FORM_VALUE = {
   secondEight: false,
   secondNine: false,
   secondTen: false,
+  bileSet1: [],
+  bileSet2: [],
+  bileSet3: [],
+  zeroOfbileSet1: false,
+  oneOfbileSet1: false,
+  twoOfbileSet1: false,
+  zeroOfbileSet2: false,
+  oneOfbileSet2: false,
+  twoOfbileSet2: false,
+  zeroOfbileSet3: false,
+  oneOfbileSet3: false,
+  twoOfbileSet3: false,
 };
 
 export default {
