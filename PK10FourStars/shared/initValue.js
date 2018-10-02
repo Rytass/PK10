@@ -66,6 +66,20 @@ export const INIT_FORM_VALUE = {
   tailSeven: false,
   tailEight: false,
   tailNine: false,
+  maxFour: false,
+  maxFive: false,
+  maxSix: false,
+  maxSeven: false,
+  maxEight: false,
+  maxNine: false,
+  maxTen: false,
+  minOne: false,
+  minTwo: false,
+  minThree: false,
+  minFour: false,
+  minFive: false,
+  minSix: false,
+  minSeven: false,
 };
 
 export default {
