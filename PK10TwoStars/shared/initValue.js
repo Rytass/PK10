@@ -36,6 +36,10 @@ export const INIT_FORM_VALUE = {
   zeroOfbileSet3: false,
   oneOfbileSet3: false,
   twoOfbileSet3: false,
+  noContinuous: false,
+  isContinuous: false,
+  uphill: false,
+  downhill: false,
 };
 
 export default {
