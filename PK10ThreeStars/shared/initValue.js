@@ -119,6 +119,13 @@ export const INIT_FORM_VALUE = {
   killSumTwentyFive: false,
   killSumTwentySix: false,
   killSumTwentySeven: false,
+  noContinuous: false,
+  twoContinuous: false,
+  threeContinuous: false,
+  uphill: false,
+  downhill: false,
+  convex: false,
+  concave: false,
 };
 
 export default {

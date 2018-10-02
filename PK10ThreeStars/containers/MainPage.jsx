@@ -15,6 +15,7 @@ import CrossTailSection from '../components/CrossTailSection';
 import MaxMinSection from '../components/MaxMinSection';
 import BileSetSection from '../components/BileSetSection';
 import KillSumSection from '../components/KillSumSection';
+import SpecialSection from '../components/SpecialSection';
 import ResultSection from '../components/ResultSection';
 import BaseSection from '../components/BaseSection';
 import { INIT_FORM_VALUE } from '../shared/initValue';
@@ -152,6 +153,7 @@ class MainPage extends PureComponent<Props> {
             </div>
             <div style={styles.sectionWrapper}>
               <KillSumSection />
+              <SpecialSection />
             </div>
           </div>
         </div>
