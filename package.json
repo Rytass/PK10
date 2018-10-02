@@ -2,7 +2,7 @@
   "name": "pk10",
   "version": "1.0.0",
   "description": "PK10",
-  "main": "./PK10ThreeStars/main.js",
+  "main": "./PK10TwoStars/main.js",
   "scripts": {
     "build": "npm run build:PK10FiveStars",
     "build:copyConfig:PK10FiveStars": "cp -r ./PK10FiveStars/static/* ./PK10FiveStars/dist && cp ./PK10FiveStars/production/* ./PK10FiveStars/dist",
