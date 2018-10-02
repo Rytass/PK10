@@ -75,7 +75,7 @@ const styles = {
 
 type Props = {
   title: string,
-  value: Array<string>,
+  value: Array<number>,
   setValue: Function,
 }
 
@@ -95,56 +95,56 @@ class TrashButtons extends PureComponent<Props> {
             value={value}
             setValue={setValue}
             label="01"
-            mean="1" />
+            mean={1} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="02"
-            mean="2" />
+            mean={2} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="03"
-            mean="3" />
+            mean={3} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="04"
-            mean="4" />
+            mean={4} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="05"
-            mean="5" />
+            mean={5} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="06"
-            mean="6" />
+            mean={6} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="07"
-            mean="7" />
+            mean={7} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="08"
-            mean="8" />
+            mean={8} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="09"
-            mean="9" />
+            mean={9} />
           <TrashButtonItem
             value={value}
             setValue={setValue}
             label="10"
-            mean="0" />
+            mean={10} />
           <button
             type="button"
             key="all"
-            onClick={() => setValue(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'])}
+            onClick={() => setValue([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])}
             style={styles.allBtn}>
             全
           </button>

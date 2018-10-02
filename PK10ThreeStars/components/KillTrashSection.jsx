@@ -5,19 +5,23 @@ import radium from 'radium';
 import {
   Field,
   change,
+  formValueSelector,
 } from 'redux-form';
+import sortBy from 'lodash/sortBy';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MAIN_FORM } from '../shared/form';
 import TrashButtons from './Elements/TrashButtons';
 import TextArea from './Form/TextArea.jsx';
 
+const selector = formValueSelector(MAIN_FORM);
+
 const styles = {
   wrapper: {
-    height: 150,
+    height: 500,
     display: 'flex',
     alignSelf: 'stretch',
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     padding: '12px 8px',
@@ -37,13 +41,12 @@ const styles = {
     margin: '2px 0 0 0',
   },
   btnWrapper: {
-    flex: 1.5,
     display: 'flex',
     alignSelf: 'stretch',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '0 0 0 12px',
+    margin: '12px 0 0 0',
   },
   trashWrapper: {
     display: 'flex',
@@ -80,6 +83,7 @@ const styles = {
 
 type Props = {
   changeField: Function,
+  trash: string,
 }
 
 class KillTrashSection extends PureComponent<Props> {
@@ -92,6 +96,7 @@ class KillTrashSection extends PureComponent<Props> {
   add() {
     const {
       changeField,
+      trash,
     } = this.props;
 
     const {
@@ -99,6 +104,30 @@ class KillTrashSection extends PureComponent<Props> {
       second,
       third,
     } = this.state;
+
+    if (first.length && second.length && third.length) {
+      const firstText = sortBy(first, num => num).map((number) => {
+        if (number < 10) return `0${number}`;
+
+        return `${number}`;
+      }).join(' ');
+
+      const secondText = sortBy(second, num => num).map((number) => {
+        if (number < 10) return `0${number}`;
+
+        return `${number}`;
+      }).join(' ');
+
+      const thirdText = sortBy(third, num => num).map((number) => {
+        if (number < 10) return `0${number}`;
+
+        return `${number}`;
+      }).join(' ');
+
+      const result = `${firstText} *${secondText} *${thirdText}\n`;
+
+      changeField(`${trash}${result}`);
+    }
   }
 
   render() {
@@ -159,8 +188,8 @@ class KillTrashSection extends PureComponent<Props> {
 }
 
 const reduxHook = connect(
-  () => ({
-
+  state => ({
+    trash: selector(state, 'trash'),
   }),
   dispatch => bindActionCreators({
     changeField: value => change(MAIN_FORM, 'trash', value),

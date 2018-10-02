@@ -24,9 +24,9 @@ const styles = {
 };
 
 type Props = {
-  value: Array<string>,
+  value: Array<number>,
   setValue: Function,
-  mean: string,
+  mean: number,
   label: string,
 }
 
