@@ -8,19 +8,19 @@ function parseBileSet(numbers, set, bileNumbers) {
   }
 
   const result = numbers.filter((num) => {
-    const tenThousandsIndex = set.findIndex(bile => bile === parseNumber(num.num[0]));
-    const thousandsIndex = set.findIndex(bile => bile === parseNumber(num.num[1]));
-    const hundredsIndex = set.findIndex(bile => bile === parseNumber(num.num[2]));
-    const tensIndex = set.findIndex(bile => bile === parseNumber(num.num[3]));
-    const onesIndex = set.findIndex(bile => bile === parseNumber(num.num[4]));
+    const firstIndex = set.findIndex(bile => bile === parseNumber(num.num[0]));
+    const secondIndex = set.findIndex(bile => bile === parseNumber(num.num[1]));
+    const thirdIndex = set.findIndex(bile => bile === parseNumber(num.num[2]));
+    const fourthIndex = set.findIndex(bile => bile === parseNumber(num.num[3]));
+    const fifthIndex = set.findIndex(bile => bile === parseNumber(num.num[4]));
 
     if (bileNumbers.find(bileNumber => bileNumber)) {
       const bileLength = uniq([
-        tenThousandsIndex,
-        thousandsIndex,
-        hundredsIndex,
-        tensIndex,
-        onesIndex,
+        firstIndex,
+        secondIndex,
+        thirdIndex,
+        fourthIndex,
+        fifthIndex,
       ].filter(index => index >= 0)).length;
 
       return (
@@ -33,7 +33,7 @@ function parseBileSet(numbers, set, bileNumbers) {
       );
     }
 
-    return ~tenThousandsIndex || ~thousandsIndex || ~hundredsIndex || ~tensIndex || ~onesIndex;
+    return ~firstIndex || ~secondIndex || ~thirdIndex || ~fourthIndex || ~fifthIndex;
   });
 
   return result;
