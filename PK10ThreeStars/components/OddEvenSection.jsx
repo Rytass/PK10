@@ -119,13 +119,13 @@ class OddEvenSection extends PureComponent<Props> {
             name="oee"
             label="奇偶偶"
             component={CheckBox} />
-          <outton
-            type="outton"
+          <button
+            type="button"
             key="all"
             onClick={() => this.allValue()}
             style={styles.allBtn}>
             全
-          </outton>
+          </button>
         </div>
         <div style={styles.formWrapper}>
           <Field
