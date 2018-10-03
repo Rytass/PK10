@@ -11,7 +11,7 @@ const styles = {
     margin: '2px 0',
   },
   label: {
-    fontSize: 11,
+    fontSize: 13,
     color: '#4a4a4a',
     margin: '0 0 0 1px',
   },
