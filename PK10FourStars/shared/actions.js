@@ -12,6 +12,10 @@ import { bigSmallKiller } from '../helper/bigSmallKiller';
 import { oddEvenKiller } from '../helper/oddEvenKiller';
 import { primeCompositeKiller } from '../helper/primeCompositeKiller';
 import { zeroOneTwoKiller } from '../helper/zeroOneTwoKiller';
+import {
+  hillKiller,
+  continuousKiller,
+} from '../helper/specialKiller';
 import { twoSetKiller } from '../helper/twoSetKiller';
 import { twoSetKeeper } from '../helper/twoSetKeeper';
 import {
@@ -42,6 +46,7 @@ export const FILTER_ACTIONS = [
   oddEvenKiller,
   primeCompositeKiller,
   zeroOneTwoKiller,
+  hillKiller,
   twoSetKiller,
   twoSetKeeper,
   twoAcrossKeeper,
