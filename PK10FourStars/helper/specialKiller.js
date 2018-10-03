@@ -108,7 +108,7 @@ export function hillKiller(numbers, options) {
 
 export function continuousKiller(numbers, options) {
   const composed = Object.entries(options)
-    .filter(entry => entry[0].match(/Continuous/) && entry[1] === true);
+    .filter(entry => entry[0].match(/Continuous|cricket/) && entry[1] === true);
 
   if (!composed.length) return numbers;
 
@@ -314,7 +314,7 @@ export function continuousKiller(numbers, options) {
         break;
       }
 
-      case 'fourContinuous': {
+      case 'cricket': {
         numbers.forEach((num) => {
           if (
             (
@@ -366,58 +366,6 @@ export function continuousKiller(numbers, options) {
             )
             || (
               !~num.num.indexOf('6')
-              && ~num.num.indexOf('7')
-              && ~num.num.indexOf('8')
-              && ~num.num.indexOf('9')
-              && ~num.num.indexOf('0')
-            )
-          ) {
-            num.killFailed();
-          }
-        });
-        break;
-      }
-
-      case 'fiveContinuous': {
-        numbers.forEach((num) => {
-          if (
-            (
-              ~num.num.indexOf('1')
-              && ~num.num.indexOf('2')
-              && ~num.num.indexOf('3')
-              && ~num.num.indexOf('4')
-              && ~num.num.indexOf('5')
-            )
-            || (
-              ~num.num.indexOf('2')
-              && ~num.num.indexOf('3')
-              && ~num.num.indexOf('4')
-              && ~num.num.indexOf('5')
-              && ~num.num.indexOf('6')
-            )
-            || (
-              ~num.num.indexOf('3')
-              && ~num.num.indexOf('4')
-              && ~num.num.indexOf('5')
-              && ~num.num.indexOf('6')
-              && ~num.num.indexOf('7')
-            )
-            || (
-              ~num.num.indexOf('4')
-              && ~num.num.indexOf('5')
-              && ~num.num.indexOf('6')
-              && ~num.num.indexOf('7')
-              && ~num.num.indexOf('8')
-            )
-            || (
-              ~num.num.indexOf('5')
-              && ~num.num.indexOf('6')
-              && ~num.num.indexOf('7')
-              && ~num.num.indexOf('8')
-              && ~num.num.indexOf('9')
-            )
-            || (
-              ~num.num.indexOf('6')
               && ~num.num.indexOf('7')
               && ~num.num.indexOf('8')
               && ~num.num.indexOf('9')

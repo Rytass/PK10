@@ -47,6 +47,7 @@ export const FILTER_ACTIONS = [
   primeCompositeKiller,
   zeroOneTwoKiller,
   hillKiller,
+  continuousKiller,
   twoSetKiller,
   twoSetKeeper,
   twoAcrossKeeper,
