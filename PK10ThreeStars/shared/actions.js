@@ -23,6 +23,7 @@ import {
   twoAcrossKeeper,
   twoFitKeeper,
 } from '../helper/acrossFitKeeper';
+import { trashKiller } from '../helper/trashKiller';
 import {
   bigTypeKeeper,
   oddTypeKeeper,
@@ -52,6 +53,7 @@ export const FILTER_ACTIONS = [
   twoSetKeeper,
   twoAcrossKeeper,
   twoFitKeeper,
+  trashKiller,
   bigTypeKeeper,
   oddTypeKeeper,
   primeTypeKeeper,
