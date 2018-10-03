@@ -13,6 +13,20 @@ import { oddEvenKiller } from '../helper/oddEvenKiller';
 import { primeCompositeKiller } from '../helper/primeCompositeKiller';
 import { twoSetKiller } from '../helper/twoSetKiller';
 import { twoSetKeeper } from '../helper/twoSetKeeper';
+import {
+  twoAcrossKeeper,
+  twoFitKeeper,
+  threeFitKeeper,
+} from '../helper/acrossFitKeeper';
+import { sumKiller } from '../helper/sumKiller';
+import {
+  bigTypeKeeper,
+  oddTypeKeeper,
+  primeTypeKeeper,
+  zeroLoadTypeKeeper,
+  oneLoadTypeKeeper,
+  twoLoadTypeKeeper,
+} from '../helper/typeKeeper';
 
 export const FILTER_ACTIONS = [
   baseKiller,
@@ -28,6 +42,16 @@ export const FILTER_ACTIONS = [
   primeCompositeKiller,
   twoSetKiller,
   twoSetKeeper,
+  twoAcrossKeeper,
+  twoFitKeeper,
+  threeFitKeeper,
+  sumKiller,
+  bigTypeKeeper,
+  oddTypeKeeper,
+  primeTypeKeeper,
+  zeroLoadTypeKeeper,
+  oneLoadTypeKeeper,
+  twoLoadTypeKeeper,
 ];
 
 export default {
