@@ -14,7 +14,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    padding: '4px 8px 0 8px',
+    padding: '4px 16px 0 16px',
     margin: '0 8px',
     borderWidth: '0 1px 0 1px',
     borderColor: '#4a4a4a',
