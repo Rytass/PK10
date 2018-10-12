@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MAIN_FORM } from '../shared/form';
 import TextArea from './Form/TextArea.jsx';
+import { transOrigin } from '../helper/operator.js';
 
 const selector = formValueSelector(MAIN_FORM);
 
@@ -111,7 +112,7 @@ class KillChooseSection extends PureComponent<Props> {
 
 const reduxHook = connect(
   state => ({
-    killChooseLength: selector(state, 'killChoose').split(/[\n(\r\n)]/).filter(t => t).length,
+    killChooseLength: selector(state, 'killChoose').split(/[\n(\r\n)]/).filter(t => transOrigin(t).length === 4).length,
   }),
   dispatch => bindActionCreators({
     changeField: value => change(MAIN_FORM, 'killChoose', value),
