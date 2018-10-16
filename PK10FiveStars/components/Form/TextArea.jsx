@@ -71,6 +71,10 @@ class TextArea extends PureComponent {
           style={styles.textArea}
           value={value}
           rows={5}
+          wrap="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
           placeholder={placeholder}
           onChange={onChange} />
       </div>
