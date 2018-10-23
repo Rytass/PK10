@@ -8,6 +8,7 @@ import {
   Route,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import Alert from './containers/Alert';
 import Header from './containers/Header';
 import MainBoard from './containers/MainBoard';
 
@@ -19,6 +20,7 @@ function App({
       <MemoryRouter>
         <Fragment>
           <Header />
+          <Alert />
           <Switch>
             <Route path="/" component={MainBoard} />
           </Switch>
